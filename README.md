@@ -3,6 +3,7 @@
 Multi-platform Nix configuration supporting NixOS (Hyprland) and macOS (Aerospace).
 
 ![NixOS Desktop](screenshots/linux.png)
+![macOS Desktop](screenshots/macOS.png)
 
 ## Features
 
