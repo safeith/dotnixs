@@ -125,6 +125,80 @@ Replace the hostname in the build commands with your own:
 | `stylix.nix` | System-wide theming |
 | `packages.nix` | Platform-specific package lists |
 
+## Keyboard Shortcuts
+
+### Hyprland (NixOS)
+
+**Window Management:**
+- `Alt+h/j/k/l` - Focus window left/down/up/right
+- `Alt+Shift+h/j/k/l` - Move window left/down/up/right
+- `Alt+q` - Close active window
+- `Alt+Shift+q` - Force kill window
+- `Alt+f` - Toggle fullscreen
+- `Alt+Shift+Space` - Toggle floating
+- `Alt+Shift+b` - Pseudo-tile (dwindle)
+- `Alt+/` - Toggle split orientation
+
+**Workspaces:**
+- `Alt+1-4` - Switch to workspace 1-4
+- `Alt+Shift+1-4` - Move window to workspace 1-4
+
+**Applications:**
+- `Alt+Return` - Launch Kitty terminal
+- `Alt+b` - Launch Brave browser
+- `Ctrl+Space` - Launch Rofi application launcher
+- `Ctrl+Alt+l` - Lock screen (hyprlock)
+- `Alt+p` - Power menu (rofi-powermenu)
+
+**Screenshots:**
+- `Print` - Area screenshot
+- `Shift+Print` - Full screenshot
+- `Ctrl+Alt+p` - Area screenshot (alternative)
+
+**Utilities:**
+- `Alt+x` - Color picker (hyprpicker)
+- `Alt+v` - Clipboard history (paste)
+- `Alt+Shift+v` - Delete from clipboard history
+- `Alt+Shift+c` - Clear clipboard history
+
+**System:**
+- `Alt+Shift+r` - Reload Hyprland config
+- `Alt+Shift+e` - Exit Hyprland
+- `Alt+Shift+F1/F2/F3` - Power profiles (power-saver/balanced/performance)
+
+**Media:**
+- `XF86AudioPlay/Pause` - Play/pause media
+- `XF86AudioNext/Prev` - Next/previous track
+- `XF86AudioStop` - Stop playback
+- `XF86AudioRaiseVolume/LowerVolume` - Volume control
+- `XF86AudioMute` - Toggle mute
+- `XF86MonBrightnessUp/Down` - Brightness control
+
+### Aerospace (macOS)
+
+**Window Management:**
+- `Alt+h/j/k/l` - Focus window left/down/up/right
+- `Alt+Shift+h/j/k/l` - Move window left/down/up/right
+- `Alt+f` - Toggle fullscreen
+- `Alt+Shift+Space` - Toggle floating/tiling
+- `Alt+Shift+b` - Balance window sizes
+
+**Layouts:**
+- `Alt+/` - Toggle horizontal/vertical tiles layout
+- `Alt+,` - Toggle horizontal/vertical accordion layout
+
+**Workspaces:**
+- `Alt+1-5` - Switch to workspace 1-5
+- `Alt+Shift+1-5` - Move window to workspace 1-5
+
+**Resize Mode:**
+- `Alt+r` - Enter resize mode
+- `h/j/k/l` - Resize window (in resize mode)
+- `Enter/Esc` - Exit resize mode
+
+**System:**
+- `Alt+Shift+r` - Reload Aerospace config
+
 ## Customization
 
 ### Adding a new host
