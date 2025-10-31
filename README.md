@@ -2,6 +2,8 @@
 
 Multi-platform Nix configuration supporting NixOS (Hyprland) and macOS (Aerospace).
 
+![NixOS Desktop](screenshots/linux.png)
+
 ## Features
 
 - **NixOS (thinkFREE)**: Hyprland window manager with Waybar, Rofi, and Stylix theming
