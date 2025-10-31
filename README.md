@@ -14,21 +14,24 @@ Multi-platform Nix configuration supporting NixOS (Hyprland) and macOS (Aerospac
 
 ```
 .
-├── hosts/           # Host-specific configurations
-│   ├── thinkFREE/   # NixOS laptop
-│   └── F4MWR9VVCT/  # macOS work machine
-├── modules/         # Reusable modules
-│   ├── git.nix      # Git configuration
-│   ├── hyprland.nix # Hyprland WM (Linux)
-│   ├── aerospace.nix # Aerospace WM (macOS)
-│   ├── kitty.nix    # Terminal emulator
-│   ├── nvchad.nix   # Neovim configuration
+├── hosts/              # Host-specific configurations
+│   ├── <hostname>/     # Your NixOS/macOS host
+│   │   ├── configuration.nix  # System configuration
+│   │   ├── home.nix           # Home-manager configuration
+│   │   └── ...                # Additional host-specific files
+├── modules/            # Reusable modules
+│   ├── git.nix         # Git configuration
+│   ├── hyprland.nix    # Hyprland WM (Linux)
+│   ├── aerospace.nix   # Aerospace WM (macOS)
+│   ├── kitty.nix       # Terminal emulator
+│   ├── nvchad.nix      # Neovim configuration
 │   └── ...
-├── configs/         # Application configurations
-│   └── nvim/        # NvChad setup
-├── wallpapers/      # Wallpaper images
-├── secrets.nix      # Local secrets (gitignored)
-└── flake.nix        # Flake entry point
+├── configs/            # Application configurations
+│   └── nvim/           # NvChad setup
+├── wallpapers/         # Wallpaper images
+├── secrets.nix         # Local secrets (gitignored)
+├── secrets.nix.example # Template for secrets
+└── flake.nix           # Flake entry point
 ```
 
 ## Setup
@@ -58,29 +61,49 @@ Edit `secrets.nix` with your information:
 }
 ```
 
-### 3. Build the configuration
+### 3. Update flake.nix with your hostname
+
+Edit `flake.nix` and replace the host configurations with your own:
+
+```nix
+nixosConfigurations = {
+  yourhostname = let  # Replace with your hostname
+    # ... configuration
+  };
+};
+
+darwinConfigurations = {
+  yourmachost = let  # Replace with your macOS hostname
+    # ... configuration
+  };
+};
+```
+
+### 4. Build the configuration
 
 **NixOS:**
 ```bash
-sudo nixos-rebuild switch --flake .#thinkFREE --impure
+sudo nixos-rebuild switch --flake .#yourhostname --impure
 ```
 
 **macOS:**
 ```bash
-darwin-rebuild switch --flake .#F4MWR9VVCT --impure
+darwin-rebuild switch --flake .#yourmachost --impure
 ```
 
 > **Note:** The `--impure` flag is required because `secrets.nix` is loaded from outside the flake.
 
 ## Hosts
 
-### thinkFREE (NixOS)
+Replace the hostname in the build commands with your own:
+
+### NixOS Example
 - **Desktop**: Hyprland + Waybar + Rofi
 - **Hardware**: Secure boot with Lanzaboote
-- **Display**: 1920x1080 with 1.25 scaling on eDP-1
+- **Display**: Auto-scaling and multi-monitor support
 - **Features**: Auto-disable laptop display when lid closes
 
-### F4MWR9VVCT (macOS)
+### macOS Example
 - **Desktop**: Aerospace + Sketchybar + skhd
 - **Platform**: Apple Silicon (aarch64-darwin)
 - **Apps**: Homebrew integration for macOS-specific apps
@@ -104,9 +127,10 @@ darwin-rebuild switch --flake .#F4MWR9VVCT --impure
 ### Adding a new host
 
 1. Create host directory: `mkdir -p hosts/newhostname`
-2. Add `configuration.nix` and `home.nix`
-3. Update `flake.nix` to include the new host
-4. Build: `sudo nixos-rebuild switch --flake .#newhostname --impure`
+2. Copy existing configuration: `cp -r hosts/thinkFREE/* hosts/newhostname/` (for NixOS) or `cp -r hosts/F4MWR9VVCT/* hosts/newhostname/` (for macOS)
+3. Edit `hosts/newhostname/configuration.nix` and `home.nix` for your system
+4. Add host to `flake.nix` under `nixosConfigurations` or `darwinConfigurations`
+5. Build: `sudo nixos-rebuild switch --flake .#newhostname --impure`
 
 ### Adding packages
 

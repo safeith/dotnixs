@@ -1,13 +1,23 @@
 # Agent Guidelines for NixOS Configuration Repository
 
+## Important Notes
+- **Secrets**: This repo uses `secrets.nix` (gitignored) loaded via PWD. Always use `--impure` flag when building.
+- **Hostnames**: Host-specific configurations are in `hosts/<hostname>/`. Replace with actual hostname in build commands.
+
 ## Build/Test Commands
-- **Build NixOS**: `sudo nixos-rebuild switch --flake .#thinkFREE --impure`
-- **Build Darwin**: `darwin-rebuild switch --flake .#F4MWR9VVCT --impure`
-- **Test without switching**: `nixos-rebuild test --flake .#<hostname>`
+- **Build NixOS**: `sudo nixos-rebuild switch --flake .#<hostname> --impure`
+- **Build Darwin**: `darwin-rebuild switch --flake .#<hostname> --impure`
+- **Test without switching**: `nixos-rebuild test --flake .#<hostname> --impure`
 - **Check flake**: `nix flake check` (validates flake structure and evaluates configurations)
 - **Update flake inputs**: `nix flake update`
 - **Format Nix**: `nvim +":lua vim.lsp.buf.format()" +wq <file.nix>` or `nixpkgs-fmt <file.nix>`
 - **Format Lua**: `stylua <file.lua>`
+
+## Secrets Management
+- `secrets.nix` contains sensitive data (emails, usernames) and is gitignored
+- Template available in `secrets.nix.example`
+- Loaded dynamically using PWD in `flake.nix` (requires `--impure`)
+- Never commit sensitive data to git
 
 ## Code Style - Nix
 - 2-space indentation; imports at top; allowUnfree when needed
