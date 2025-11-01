@@ -69,6 +69,8 @@
         rounding = 10;
         blur = { enabled = false; };
         shadow = { enabled = false; };
+        active_opacity = 0.95;
+        inactive_opacity = 0.85;
       };
 
       misc = {
