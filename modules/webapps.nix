@@ -11,6 +11,31 @@
     sha256 = "1l8rdv3k21lmmrkn8szw10s4cfd9wzpjhj03f7bzhpzpqb0ph680";
   };
 
+  home.file.".local/share/icons/telegram.png".source = pkgs.fetchurl {
+    url = "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/telegram.png";
+    sha256 = "jGUNFMpH62/XKqM0fZ1fKEAWt+rh47lgZVWzVNuTh/M=";
+  };
+
+  home.file.".local/share/icons/whatsapp.png".source = pkgs.fetchurl {
+    url = "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/whatsapp.png";
+    sha256 = "onbglLXom+IuTMduXAIAtujJSghEmtwW/PEd0dSe4Pw=";
+  };
+
+  home.file.".local/share/icons/youtube.png".source = pkgs.fetchurl {
+    url = "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/youtube.png";
+    sha256 = "IXEiZv0BxEfja0Rh/4YSRzXEg8iSElLAEfCkNUcDFVI=";
+  };
+
+  home.file.".local/share/icons/youtube-music.png".source = pkgs.fetchurl {
+    url = "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/youtube-music.png";
+    sha256 = "2XzJkhMPbmLjuHiD/kIh7qA9B5gZ3Uby60U2nQC2dqI=";
+  };
+
+  home.file.".local/share/icons/soundcloud.png".source = pkgs.fetchurl {
+    url = "https://a-v2.sndcdn.com/assets/images/sc-icons/ios-a62dfc8fe7.png";
+    sha256 = "YI+1gY42lGxm/lFzFG1K6BSJqLw+xcuIAQk6oBI6PNE=";
+  };
+
   xdg.desktopEntries = {
     telegram-web = {
       name = "Telegram";
@@ -49,6 +74,22 @@
       exec = "brave --new-window --app=https://mail.google.com --class=gmail";
       icon = "gmail";
       categories = [ "Network" "Email" ];
+      terminal = false;
+    };
+
+    soundcloud = {
+      name = "SoundCloud";
+      exec = "brave --new-window --app=https://soundcloud.com --class=soundcloud";
+      icon = "soundcloud";
+      categories = [ "AudioVideo" "Audio" ];
+      terminal = false;
+    };
+
+    youtube-music = {
+      name = "YouTube Music";
+      exec = "brave --new-window --app=https://music.youtube.com --class=youtube-music";
+      icon = "youtube-music";
+      categories = [ "AudioVideo" "Audio" ];
       terminal = false;
     };
   };

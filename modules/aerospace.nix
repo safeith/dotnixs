@@ -33,8 +33,13 @@
     ]
     outer.right = 8
 
+
+
     [workspace-to-monitor-force-assignment]
-    5 = 'HIDDEN'
+    6 = 'HIDDEN'
+
+    [[on-window-detected]]
+    run = ['move-node-to-workspace 1']
 
     [mode.main.binding]
     alt-h = 'focus left'
@@ -54,12 +59,14 @@
     alt-3 = 'workspace 3'
     alt-4 = 'workspace 4'
     alt-5 = 'workspace 5'
+    alt-6 = 'workspace 6'
 
     alt-shift-1 = 'move-node-to-workspace 1'
     alt-shift-2 = 'move-node-to-workspace 2'
     alt-shift-3 = 'move-node-to-workspace 3'
     alt-shift-4 = 'move-node-to-workspace 4'
     alt-shift-5 = 'move-node-to-workspace 5'
+    alt-shift-6 = 'move-node-to-workspace 6'
 
     alt-slash = 'layout tiles horizontal vertical'
     alt-comma = 'layout accordion horizontal vertical'
