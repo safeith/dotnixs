@@ -140,11 +140,16 @@ Replace the hostname in the build commands with your own:
 - `Alt+/` - Toggle split orientation
 
 **Workspaces:**
-- `Alt+1-4` - Switch to workspace 1-4
-- `Alt+Shift+1-4` - Move window to workspace 1-4
+- `Alt+1-5` - Switch to workspace 1-5
+- `Alt+Shift+1-5` - Move window to workspace 1-5
+
+**Resize Mode:**
+- `Alt+r` - Enter resize mode
+- `h/j/k/l` - Resize window (in resize mode)
+- `Enter/Esc` - Exit resize mode
 
 **Applications:**
-- `Alt+Return` - Launch Kitty terminal
+- `Alt+k` - Launch Kitty terminal
 - `Alt+b` - Launch Brave browser
 - `Ctrl+Space` - Launch Rofi application launcher
 - `Ctrl+Alt+l` - Lock screen (hyprlock)

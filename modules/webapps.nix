@@ -39,7 +39,7 @@
   xdg.desktopEntries = {
     telegram-web = {
       name = "Telegram";
-      exec = "brave --new-window --app=https://web.telegram.org --class=telegram-web";
+      exec = "brave --new-window --app=https://web.telegram.org";
       icon = "telegram";
       categories = [ "Network" "InstantMessaging" ];
       terminal = false;
@@ -47,7 +47,7 @@
 
     whatsapp-web = {
       name = "WhatsApp";
-      exec = "brave --new-window --app=https://web.whatsapp.com --class=whatsapp-web";
+      exec = "brave --new-window --app=https://web.whatsapp.com";
       icon = "whatsapp";
       categories = [ "Network" "InstantMessaging" ];
       terminal = false;
@@ -55,7 +55,7 @@
 
     youtube = {
       name = "YouTube";
-      exec = "brave --new-window --app=https://youtube.com --class=youtube";
+      exec = "brave --new-window --app=https://youtube.com";
       icon = "youtube";
       categories = [ "AudioVideo" "Video" ];
       terminal = false;
@@ -63,7 +63,7 @@
 
     chatgpt = {
       name = "ChatGPT";
-      exec = "brave --new-window --app=https://chatgpt.com --class=chatgpt";
+      exec = "brave --new-window --app=https://chatgpt.com";
       icon = "chatgpt";
       categories = [ "Network" "Office" ];
       terminal = false;
@@ -71,7 +71,7 @@
 
     gmail = {
       name = "Gmail";
-      exec = "brave --new-window --app=https://mail.google.com --class=gmail";
+      exec = "brave --new-window --app=https://mail.google.com";
       icon = "gmail";
       categories = [ "Network" "Email" ];
       terminal = false;
@@ -79,7 +79,7 @@
 
     soundcloud = {
       name = "SoundCloud";
-      exec = "brave --new-window --app=https://soundcloud.com --class=soundcloud";
+      exec = "brave --new-window --app=https://soundcloud.com";
       icon = "soundcloud";
       categories = [ "AudioVideo" "Audio" ];
       terminal = false;
@@ -87,7 +87,7 @@
 
     youtube-music = {
       name = "YouTube Music";
-      exec = "brave --new-window --app=https://music.youtube.com --class=youtube-music";
+      exec = "brave --new-window --app=https://music.youtube.com";
       icon = "youtube-music";
       categories = [ "AudioVideo" "Audio" ];
       terminal = false;

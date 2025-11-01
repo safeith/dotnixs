@@ -155,6 +155,8 @@
         "$mod, q, killactive"
         "$mod SHIFT, r, exec, hyprctl reload"
         "$mod SHIFT, e, exit"
+
+        "$mod, r, submap, resize"
       ];
 
       bindle = [
@@ -170,7 +172,29 @@
 
       bindm = [ "$mod, mouse:272, movewindow" "$mod, mouse:273, resizewindow" ];
 
-      windowrulev2 = [ "suppressevent maximize, class:.*" ];
+      windowrulev2 = [
+        "suppressevent maximize, class:.*"
+        "workspace 1 silent, class:^(brave-mail\.google\.com__-Default)$"
+        "workspace 2 silent, class:^(brave-browser)$"
+        "workspace 3 silent, class:^(kitty)$"
+        "workspace 4 silent, class:^(brave-web\.whatsapp\.com__-Default)$"
+        "workspace 4 silent, class:^(brave-web\.telegram\.org__-Default)$"
+        "workspace 5 silent, class:^(brave-soundcloud\.com__-Default)$"
+        "workspace 5 silent, class:^(brave-music\.youtube\.com__-Default)$"
+        "workspace 5 silent, class:^(brave-youtube\.com__-Default)$"
+        "workspace 5 silent, class:^(Spotify)$"
+      ];
     };
+
+    extraConfig = ''
+      submap = resize
+      binde = , h, resizeactive, -50 0
+      binde = , l, resizeactive, 50 0
+      binde = , k, resizeactive, 0 -50
+      binde = , j, resizeactive, 0 50
+      bind = , escape, submap, reset
+      bind = , return, submap, reset
+      submap = reset
+    '';
   };
 }
