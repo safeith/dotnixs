@@ -25,11 +25,13 @@ in {
       bold_font = "auto";
       italic_font = "auto";
       bold_italic_font = "auto";
-      modify_font =
-        if pkgs.stdenv.isDarwin then "cell_height 150%" else "cell_height 100%";
+      modify_font = if pkgs.stdenv.isDarwin then "cell_height 150%" else "cell_height 125%";
 
       # Layout
       enabled_layouts = "Tall,*";
+
+      # Transparency
+      background_opacity = lib.mkForce "0.95";
 
       # Tab bar
       tab_bar_edge = "top";
