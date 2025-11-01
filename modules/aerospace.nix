@@ -11,6 +11,9 @@
     enable-normalization-flatten-containers = true
     enable-normalization-opposite-orientation-for-nested-containers = true
 
+    default-root-container-layout = 'tiles'
+    default-root-container-orientation = 'auto'
+
     on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     on-focus-changed = "move-mouse window-lazy-center"
 
@@ -39,7 +42,16 @@
     6 = 'HIDDEN'
 
     [[on-window-detected]]
-    run = ['move-node-to-workspace 1']
+    if.app-id = 'net.kovidgoyal.kitty'
+    run = ['move-node-to-workspace 3']
+
+    [[on-window-detected]]
+    if.app-id = 'com.spotify.client'
+    run = ['move-node-to-workspace 5']
+
+    [[on-window-detected]]
+    if.app-id = 'com.brave.Browser'
+    run = ['move-node-to-workspace 2']
 
     [mode.main.binding]
     alt-h = 'focus left'
@@ -102,6 +114,34 @@
       KeepAlive = true;
       RunAtLoad = true;
       ProcessType = "Interactive";
+    };
+  };
+
+  launchd.agents.aerospace-webapp-organizer = {
+    enable = true;
+    config = {
+      ProgramArguments = [
+        "${pkgs.bash}/bin/bash"
+        "-c"
+        ''
+          export PATH="/opt/homebrew/bin:$PATH"
+          while true; do
+            sleep 5
+            aerospace list-windows --workspace 2 --format '%{window-id}|%{window-title}' 2>/dev/null | while IFS='|' read -r win_id title; do
+              title_lower=$(echo "$title" | tr '[:upper:]' '[:lower:]')
+              case "$title_lower" in
+                *gmail*) aerospace move-node-to-workspace --window-id "$win_id" 1 2>/dev/null ;;
+                *whatsapp*) aerospace move-node-to-workspace --window-id "$win_id" 4 2>/dev/null ;;
+                *telegram*) aerospace move-node-to-workspace --window-id "$win_id" 4 2>/dev/null ;;
+                *youtube*) aerospace move-node-to-workspace --window-id "$win_id" 5 2>/dev/null ;;
+                *soundcloud*) aerospace move-node-to-workspace --window-id "$win_id" 5 2>/dev/null ;;
+              esac
+            done
+          done
+        ''
+      ];
+      KeepAlive = true;
+      RunAtLoad = true;
     };
   };
 }
