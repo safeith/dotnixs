@@ -133,11 +133,13 @@ Replace the hostname in the build commands with your own:
 - `Alt+h/j/k/l` - Focus window left/down/up/right
 - `Alt+Shift+h/j/k/l` - Move window left/down/up/right
 - `Alt+q` - Close active window
-- `Alt+Shift+q` - Force kill window
 - `Alt+f` - Toggle fullscreen
+- `Alt+m` - Maximize window (keep waybar visible)
 - `Alt+Shift+Space` - Toggle floating
 - `Alt+Shift+b` - Pseudo-tile (dwindle)
 - `Alt+/` - Toggle split orientation
+- `Alt+Mouse Left` - Move window with mouse
+- `Alt+Mouse Right` - Resize window with mouse
 
 **Workspaces:**
 - `Alt+1-5` - Switch to workspace 1-5
@@ -180,9 +182,11 @@ Replace the hostname in the build commands with your own:
 - `XF86AudioPlay/Pause` - Play/pause media
 - `XF86AudioNext/Prev` - Next/previous track
 - `XF86AudioStop` - Stop playback
-- `XF86AudioRaiseVolume/LowerVolume` - Volume control
-- `XF86AudioMute` - Toggle mute
-- `XF86MonBrightnessUp/Down` - Brightness control
+- `XF86AudioRaiseVolume/LowerVolume` - Volume up/down (5% steps)
+- `Shift+XF86AudioRaiseVolume/LowerVolume` - Microphone volume up/down
+- `XF86AudioMute` - Toggle speaker mute
+- `XF86AudioMicMute` - Toggle microphone mute
+- `XF86MonBrightnessUp/Down` - Brightness up/down (5% steps)
 
 ### Aerospace (macOS)
 

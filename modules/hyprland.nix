@@ -126,6 +126,7 @@
         "$mod SHIFT, 5, movetoworkspace, 5"
 
         "$mod, f, fullscreen, 0"
+        "$mod, m, fullscreen, 1"
         "$mod SHIFT, space, togglefloating"
         "$mod SHIFT, b, pseudo"
         "$mod, slash, togglesplit"
