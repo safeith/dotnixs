@@ -9,12 +9,23 @@ in
       #!/usr/bin/env bash
       APP_ID="$1"
       URL="$2"
-      CLASS="brave-$(echo "$URL" | sed 's|https://||' | sed 's|/$||')__-Default"
       
-      if hyprctl clients -j | jq -e ".[] | select(.class == \"$CLASS\")" > /dev/null 2>&1; then
-        hyprctl dispatch focuswindow "class:$CLASS"
+      if [[ "$OSTYPE" == "darwin"* ]]; then
+        # macOS: Check if app is already running via process name
+        if pgrep -f "Brave.*--app=$URL" > /dev/null 2>&1; then
+          # Focus existing window using open
+          open -a "Brave Browser" --args --app="$URL"
+        else
+          open -na "Brave Browser" --args --app="$URL"
+        fi
       else
-        brave --app="$URL" &
+        # Linux (Hyprland): Check window class
+        CLASS="brave-$(echo "$URL" | sed 's|https://||' | sed 's|/$||')__-Default"
+        if hyprctl clients -j | jq -e ".[] | select(.class == \"$CLASS\")" > /dev/null 2>&1; then
+          hyprctl dispatch focuswindow "class:$CLASS"
+        else
+          brave --app="$URL" &
+        fi
       fi
     '';
     executable = true;
