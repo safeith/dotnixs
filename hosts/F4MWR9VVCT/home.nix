@@ -18,6 +18,7 @@ in
     ../../modules/skhd.nix
     ../../modules/stylix-home.nix
     ../../modules/tmux.nix
+    ../../modules/webapps.nix
     ../../modules/zsh.nix
   ];
 
