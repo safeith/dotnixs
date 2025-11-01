@@ -182,7 +182,7 @@
         "workspace 5 silent, class:^(brave-soundcloud\.com__-Default)$"
         "workspace 5 silent, class:^(brave-music\.youtube\.com__-Default)$"
         "workspace 5 silent, class:^(brave-youtube\.com__-Default)$"
-        "workspace 5 silent, class:^(Spotify)$"
+        "workspace 5 silent, class:^(spotify)$"
       ];
     };
 

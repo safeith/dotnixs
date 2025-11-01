@@ -142,6 +142,11 @@ Replace the hostname in the build commands with your own:
 **Workspaces:**
 - `Alt+1-5` - Switch to workspace 1-5
 - `Alt+Shift+1-5` - Move window to workspace 1-5
+- Workspace 1: Gmail
+- Workspace 2: Brave browser
+- Workspace 3: Kitty terminal
+- Workspace 4: WhatsApp, Telegram
+- Workspace 5: SoundCloud, YouTube Music, YouTube, Spotify
 
 **Resize Mode:**
 - `Alt+r` - Enter resize mode

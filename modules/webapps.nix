@@ -1,6 +1,25 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, config, ... }:
 
+let
+  launcherPath = "${config.home.homeDirectory}/.local/bin/webapp-launcher";
+in
 {
+  home.file.".local/bin/webapp-launcher" = {
+    text = ''
+      #!/usr/bin/env bash
+      APP_ID="$1"
+      URL="$2"
+      CLASS="brave-$(echo "$URL" | sed 's|https://||' | sed 's|/$||')__-Default"
+      
+      if hyprctl clients -j | jq -e ".[] | select(.class == \"$CLASS\")" > /dev/null 2>&1; then
+        hyprctl dispatch focuswindow "class:$CLASS"
+      else
+        brave --app="$URL" &
+      fi
+    '';
+    executable = true;
+  };
+
   home.file.".local/share/icons/chatgpt.png".source = pkgs.fetchurl {
     url = "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/chatgpt.png";
     sha256 = "013f6frbfbi22w92zvqpf51jmygpacz30617ql7kvxcr3vag7yca";
@@ -39,7 +58,7 @@
   xdg.desktopEntries = {
     telegram-web = {
       name = "Telegram";
-      exec = "brave --new-window --app=https://web.telegram.org";
+      exec = "${launcherPath} telegram https://web.telegram.org";
       icon = "telegram";
       categories = [ "Network" "InstantMessaging" ];
       terminal = false;
@@ -47,7 +66,7 @@
 
     whatsapp-web = {
       name = "WhatsApp";
-      exec = "brave --new-window --app=https://web.whatsapp.com";
+      exec = "${launcherPath} whatsapp https://web.whatsapp.com";
       icon = "whatsapp";
       categories = [ "Network" "InstantMessaging" ];
       terminal = false;
@@ -55,7 +74,7 @@
 
     youtube = {
       name = "YouTube";
-      exec = "brave --new-window --app=https://youtube.com";
+      exec = "${launcherPath} youtube https://youtube.com";
       icon = "youtube";
       categories = [ "AudioVideo" "Video" ];
       terminal = false;
@@ -63,33 +82,33 @@
 
     chatgpt = {
       name = "ChatGPT";
-      exec = "brave --new-window --app=https://chatgpt.com";
+      exec = "${launcherPath} chatgpt https://chatgpt.com";
       icon = "chatgpt";
-      categories = [ "Network" "Office" ];
+      categories = [ "Network" ];
       terminal = false;
     };
 
     gmail = {
       name = "Gmail";
-      exec = "brave --new-window --app=https://mail.google.com";
+      exec = "${launcherPath} gmail https://mail.google.com";
       icon = "gmail";
-      categories = [ "Network" "Email" ];
+      categories = [ "Network" ];
       terminal = false;
     };
 
     soundcloud = {
       name = "SoundCloud";
-      exec = "brave --new-window --app=https://soundcloud.com";
+      exec = "${launcherPath} soundcloud https://soundcloud.com";
       icon = "soundcloud";
-      categories = [ "AudioVideo" "Audio" ];
+      categories = [ "AudioVideo" ];
       terminal = false;
     };
 
     youtube-music = {
       name = "YouTube Music";
-      exec = "brave --new-window --app=https://music.youtube.com";
+      exec = "${launcherPath} youtube-music https://music.youtube.com";
       icon = "youtube-music";
-      categories = [ "AudioVideo" "Audio" ];
+      categories = [ "AudioVideo" ];
       terminal = false;
     };
   };
