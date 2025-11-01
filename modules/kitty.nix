@@ -31,7 +31,7 @@ in {
       enabled_layouts = "Tall,*";
 
       # Transparency
-      background_opacity = lib.mkForce "0.95";
+      background_opacity = lib.mkForce "0.98";
 
       # Tab bar
       tab_bar_edge = "top";
