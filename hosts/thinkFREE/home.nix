@@ -15,7 +15,6 @@
     ../../modules/rofi.nix
     ../../modules/tmux.nix
     ../../modules/waybar.nix
-    ../../modules/webapps.nix
     ../../modules/zsh.nix
   ];
 

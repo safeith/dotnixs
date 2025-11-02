@@ -12,9 +12,10 @@
       vi = "nvim";
       nfmt = "nvim +':lua vim.lsp.buf.format()' +wq";
       rebuild-work =
-        "sudo darwin-rebuild switch --flake ~/.config/nix#F4MWR9VVCT";
+        "sudo darwin-rebuild switch --flake ~/.config/nix#F4MWR9VVCT --impure";
       rebuild-personal =
-        "sudo nixos-rebuild switch --flake ~/.config/nix#thinkFREE";
+        "sudo nixos-rebuild switch --flake ~/.config/nix#thinkFREE --impure";
+      nix-clean = "nix-collect-garbage -d && nix store optimise && sudo nix-collect-garbage -d && sudo nix store optimise";
     };
 
     plugins = [

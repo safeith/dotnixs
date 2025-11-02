@@ -177,15 +177,6 @@
 
       windowrulev2 = [
         "suppressevent maximize, class:.*"
-        "workspace 1 silent, class:^(brave-mail\.google\.com__-Default)$"
-        "workspace 2 silent, class:^(brave-browser)$"
-        "workspace 3 silent, class:^(kitty)$"
-        "workspace 4 silent, class:^(brave-web\.whatsapp\.com__-Default)$"
-        "workspace 4 silent, class:^(brave-web\.telegram\.org__-Default)$"
-        "workspace 5 silent, class:^(brave-soundcloud\.com__-Default)$"
-        "workspace 5 silent, class:^(brave-music\.youtube\.com__-Default)$"
-        "workspace 5 silent, class:^(brave-youtube\.com__-Default)$"
-        "workspace 5 silent, class:^(spotify)$"
       ];
     };
 

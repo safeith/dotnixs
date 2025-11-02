@@ -144,11 +144,6 @@ Replace the hostname in the build commands with your own:
 **Workspaces:**
 - `Alt+1-5` - Switch to workspace 1-5
 - `Alt+Shift+1-5` - Move window to workspace 1-5
-- Workspace 1: Gmail
-- Workspace 2: Brave browser
-- Workspace 3: Kitty terminal
-- Workspace 4: WhatsApp, Telegram
-- Workspace 5: SoundCloud, YouTube Music, YouTube, Spotify
 
 **Resize Mode:**
 - `Alt+r` - Enter resize mode
@@ -202,8 +197,9 @@ Replace the hostname in the build commands with your own:
 - `Alt+,` - Toggle horizontal/vertical accordion layout
 
 **Workspaces:**
-- `Alt+1-5` - Switch to workspace 1-5
-- `Alt+Shift+1-5` - Move window to workspace 1-5
+- `Alt+1-6` - Switch to workspace 1-6
+- `Alt+Shift+1-6` - Move window to workspace 1-6 (auto-balances and follows)
+- Workspace 6: Hidden workspace for BetterDisplay virtual display (hides window corners on right bottom edge)
 
 **Resize Mode:**
 - `Alt+r` - Enter resize mode
