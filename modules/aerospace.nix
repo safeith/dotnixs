@@ -44,8 +44,12 @@
     7 = 'HIDDENR'
 
     [[on-window-detected]]
-    if.workspace = [6, 7]
-    run = 'move-node-to-workspace 3'
+    if.workspace = '6'
+    run = 'move-node-to-workspace 5'
+
+    [[on-window-detected]]
+    if.workspace = '7'
+    run = 'move-node-to-workspace 5'
 
     [mode.main.binding]
     alt-h = 'focus left'

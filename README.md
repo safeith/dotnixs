@@ -199,7 +199,7 @@ Replace the hostname in the build commands with your own:
 **Workspaces:**
 - `Alt+1-5` - Switch to workspace 1-5
 - `Alt+Shift+1-5` - Move window to workspace 1-5 (auto-balances and follows)
-- Workspaces 6-7: Hidden workspaces on HIDDENL/HIDDENR monitors (windows automatically move to workspace 3)
+- Workspaces 6-7: Hidden workspaces on HIDDENL/HIDDENR monitors (windows automatically move to workspace 5)
 
 **Resize Mode:**
 - `Alt+r` - Enter resize mode
