@@ -1,9 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = [
-    pkgs.jankyborders
-  ];
+  home.packages = [ pkgs.jankyborders ];
 
   home.file.".aerospace.toml".text = ''
     start-at-login = true
@@ -36,7 +34,18 @@
     ]
     outer.right = 8
 
+    [workspace-to-monitor-force-assignment]
+    1 = 'main'
+    2 = 'main'
+    3 = 'main'
+    4 = 'main'
+    5 = 'main'
+    6 = 'HIDDENL'
+    7 = 'HIDDENR'
 
+    [[on-window-detected]]
+    if.workspace = [6, 7]
+    run = 'move-node-to-workspace 3'
 
     [mode.main.binding]
     alt-h = 'focus left'
@@ -56,14 +65,12 @@
     alt-3 = 'workspace 3'
     alt-4 = 'workspace 4'
     alt-5 = 'workspace 5'
-    alt-6 = 'workspace 6'
 
     alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1', 'balance-sizes']
     alt-shift-2 = ['move-node-to-workspace 2', 'workspace 2', 'balance-sizes']
     alt-shift-3 = ['move-node-to-workspace 3', 'workspace 3', 'balance-sizes']
     alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4', 'balance-sizes']
     alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5', 'balance-sizes']
-    alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6', 'balance-sizes']
 
     alt-slash = 'layout tiles horizontal vertical'
     alt-comma = 'layout accordion horizontal vertical'
@@ -85,8 +92,6 @@
     esc = 'mode main'
   '';
 
-
-
   launchd.agents.jankyborders = {
     enable = true;
     config = {
@@ -101,6 +106,5 @@
       ProcessType = "Interactive";
     };
   };
-
 
 }
