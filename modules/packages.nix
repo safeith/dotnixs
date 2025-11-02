@@ -42,7 +42,7 @@ let
 
   zoom-scaled = pkgs.symlinkJoin {
     name = "zoom-us";
-    paths = [ pkgs.zoom-us ];
+    paths = [ pkgs-unstable.zoom-us ];
     buildInputs = [ pkgs.makeWrapper ];
     postBuild = ''
       wrapProgram $out/bin/zoom \

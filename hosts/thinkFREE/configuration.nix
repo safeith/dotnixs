@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   imports = [
@@ -51,6 +51,7 @@
     _1password.enable = true;
     _1password-gui = {
       enable = true;
+      package = pkgs-unstable._1password-gui;
       polkitPolicyOwners = [ "safeith" ];
     };
   };

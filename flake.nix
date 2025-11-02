@@ -91,6 +91,7 @@
           };
         in lib.nixosSystem {
           inherit system;
+          specialArgs = { inherit pkgs-unstable; };
           modules = [
             stylix.nixosModules.stylix
             ./hosts/thinkFREE/configuration.nix
