@@ -43,7 +43,7 @@
     nonUS.remapTilde = true;
   };
 
-  system.defaults.NSGlobalDomain."com.apple.keyboard.fnState" = true;
+  system.defaults.NSGlobalDomain."com.apple.keyboard.fnState" = false;
 
   homebrew = {
     enable = true;
