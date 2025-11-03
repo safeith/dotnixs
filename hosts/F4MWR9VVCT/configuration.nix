@@ -14,8 +14,6 @@
 
   programs.zsh.enable = true;
 
-  security.pam.services.sudo_local.touchIdAuth = true;
-
   environment.etc."sudoers.d/darwin-rebuild".text = ''
     Defaults env_keep += "TERMINFO TERMINFO_DIRS"
     hojjat.alimohammadi ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/darwin-rebuild
