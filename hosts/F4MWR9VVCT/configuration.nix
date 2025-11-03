@@ -22,6 +22,9 @@
   system.defaults.dock = {
     autohide = true;
     expose-group-apps = true;
+    mru-spaces = false;
+    show-recents = false;
+    launchanim = false;
     persistent-apps = [
       "/System/Applications/Launchpad.app"
       "/Applications/Brave Browser.app"
@@ -31,7 +34,15 @@
     ];
   };
 
-  system.defaults.NSGlobalDomain._HIHideMenuBar = true;
+  system.defaults.NSGlobalDomain = {
+    _HIHideMenuBar = true;
+    "com.apple.keyboard.fnState" = false;
+    AppleSpacesSwitchOnActivate = false;
+    NSAutomaticCapitalizationEnabled = true;
+    NSAutomaticPeriodSubstitutionEnabled = true;
+  };
+
+  system.defaults.trackpad.Clicking = true;
 
   system.defaults.spaces.spans-displays = true;
 
@@ -40,8 +51,6 @@
     remapCapsLockToEscape = true;
     nonUS.remapTilde = true;
   };
-
-  system.defaults.NSGlobalDomain."com.apple.keyboard.fnState" = false;
 
   homebrew = {
     enable = true;
