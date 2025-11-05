@@ -60,6 +60,7 @@
                 [ stylix.homeModules.stylix ]
               else
                 [ ]);
+              nixpkgs.config.allowUnfree = true;
             };
           };
         }];

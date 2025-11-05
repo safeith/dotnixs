@@ -9,9 +9,12 @@ let
     axel
     cloudflared
     dig
+    dos2unix
     fastfetch
     fzf
     gcc
+    gh
+    pkgs-unstable.github-copilot-cli
     go
     (google-cloud-sdk.withExtraComponents
       [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
