@@ -13,6 +13,7 @@ let
     fastfetch
     fzf
     gcc
+    pkgs-unstable.gemini-cli
     gh
     pkgs-unstable.github-copilot-cli
     go
