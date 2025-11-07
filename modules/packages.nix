@@ -13,9 +13,7 @@ let
     fastfetch
     fzf
     gcc
-    pkgs-unstable.gemini-cli
     gh
-    pkgs-unstable.github-copilot-cli
     go
     (google-cloud-sdk.withExtraComponents
       [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
@@ -30,6 +28,8 @@ let
     nodejs
     nushell
     p7zip
+    pkgs-unstable.gemini-cli
+    pkgs-unstable.github-copilot-cli
     pwgen
     python3
     ripgrep

@@ -50,13 +50,14 @@
             useGlobalPkgs = isLinux;
             useUserPackages = true;
             extraSpecialArgs = homeManagerExtraSpecialArgs system pkgs-unstable secretsPath;
-            users.${host.user} = {
+            users.${host.user} = ({
               imports = [ host.homeConfig ] ++ (if includeStyleix then
                 [ stylix.homeModules.stylix ]
               else
                 [ ]);
+            } // (if !isLinux then {
               nixpkgs.config.allowUnfree = true;
-            };
+            } else {}));
           };
         }];
 
