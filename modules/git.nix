@@ -20,6 +20,8 @@ in {
       **/globals.tf
       **/locals.tf
       **/AGENTS.md
+      **/.DS_Store
+      **/.localized
     '';
   };
 
