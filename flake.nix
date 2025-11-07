@@ -33,15 +33,10 @@
       url = "github:nix-community/stylix/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    mac-app-util = {
-      url = "github:hraban/mac-app-util";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs@{ nixpkgs, nixpkgs-unstable, home-manager, darwin, lanzaboote
-    , stylix, mac-app-util, ... }:
+    , stylix, ... }:
     let
       lib = nixpkgs.lib;
 
@@ -137,7 +132,6 @@
             ./hosts/F4MWR9VVCT/configuration.nix
 
             home-manager.darwinModules.home-manager
-            mac-app-util.darwinModules.default
           ] ++ (homeManagerModules F4MWR9VVCTHost system pkgs-unstable true false secretsPath);
         };
       };
