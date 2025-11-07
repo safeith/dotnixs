@@ -117,4 +117,8 @@ return {
       -- "rcarriga/nvim-notify",
     },
   },
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+  },
 }

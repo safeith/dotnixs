@@ -28,6 +28,7 @@ let
     nix-prefetch
     nixpkgs-fmt
     nodejs
+    nushell
     p7zip
     pwgen
     python3
