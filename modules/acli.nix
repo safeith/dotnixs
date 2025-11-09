@@ -3,19 +3,19 @@
 let
   acli = pkgs.buildFHSEnv {
     name = "acli";
-    
+
     targetPkgs = pkgs: with pkgs; [
       # Core dependencies
       glibc
       zlib
       stdenv.cc.cc.lib
-      
+
       # Common libraries that might be needed
       openssl
       curl
       cacert
     ];
-    
+
     runScript = pkgs.writeShellScript "acli-wrapper" ''
       # Download and setup acli if not exists
       ACLI_DIR="$HOME/.local/share/acli"
@@ -45,7 +45,7 @@ let
       # Execute acli with all arguments
       exec "$ACLI_BIN" "$@"
     '';
-    
+
     meta = with lib; {
       description = "Atlassian CLI - Command-line interface for Atlassian Cloud products";
       homepage = "https://developer.atlassian.com/cloud/acli/";
@@ -54,6 +54,7 @@ let
     };
   };
 
-in {
+in
+{
   home.packages = lib.optionals pkgs.stdenv.isLinux [ acli ];
 }

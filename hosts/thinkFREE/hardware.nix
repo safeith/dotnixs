@@ -6,7 +6,8 @@ let
     query = "/sys/class/hwmon";
     inherit name indices;
   };
-in {
+in
+{
   services = {
     printing = {
       enable = true;

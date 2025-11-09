@@ -32,8 +32,8 @@ Multi-platform Nix configuration supporting NixOS (Hyprland) and macOS (Aerospac
 ├── configs/            # Application configurations
 │   └── nvim/           # NvChad setup
 ├── wallpapers/         # Wallpaper images
-├── secrets.nix         # Local secrets (gitignored)
-├── secrets.nix.example # Template for secrets
+├── user.nix           # Local user config (gitignored)
+├── user.nix.example   # Template for user config
 └── flake.nix           # Flake entry point
 ```
 
@@ -46,17 +46,18 @@ git clone https://github.com/safeith/dotnixs.git ~/.config/nix
 cd ~/.config/nix
 ```
 
-### 2. Configure secrets
+### 2. Configure user settings
 
-Copy the example secrets file and fill in your values:
+Copy the example user config file and fill in your values:
 
 ```bash
-cp secrets.nix.example secrets.nix
+cp user.nix.example user.nix
 ```
 
-Edit `secrets.nix` with your information:
+Edit `user.nix` with your information:
 ```nix
 {
+  Name = "Your Full Name";
   workEmail = "your.work@company.com";
   personalEmail = "your.personal@email.com";
   workUsername = "your-work-username";
@@ -94,7 +95,7 @@ sudo nixos-rebuild switch --flake .#yourhostname --impure
 darwin-rebuild switch --flake .#yourmachost --impure
 ```
 
-> **Note:** The `--impure` flag is required because `secrets.nix` is loaded from outside the flake.
+> **Note:** The `--impure` flag is required because `user.nix` is loaded from outside the flake.
 
 ## Hosts
 
@@ -115,6 +116,7 @@ Replace the hostname in the build commands with your own:
 
 | Module | Description |
 |--------|-------------|
+| `user.nix` | Centralized user configuration with validation |
 | `git.nix` | Git config with conditional work/personal profiles |
 | `kitty.nix` | Terminal with font and theme settings |
 | `nvchad.nix` | Neovim with NvChad framework |
@@ -124,6 +126,7 @@ Replace the hostname in the build commands with your own:
 | `sketchybar.nix` | Status bar for Aerospace (macOS) |
 | `stylix.nix` | System-wide theming |
 | `packages.nix` | Platform-specific package lists |
+| `system-optimization.nix` | Performance and system optimizations |
 
 ## Keyboard Shortcuts
 
@@ -132,7 +135,6 @@ Replace the hostname in the build commands with your own:
 **Window Management:**
 - `Alt+h/j/k/l` - Focus window left/down/up/right
 - `Alt+Shift+h/j/k/l` - Move window left/down/up/right
-- `Alt+q` - Close active window
 - `Alt+f` - Toggle fullscreen
 - `Alt+m` - Maximize window (keep waybar visible)
 - `Alt+Shift+Space` - Toggle floating
@@ -153,6 +155,7 @@ Replace the hostname in the build commands with your own:
 **Applications:**
 - `Alt+k` - Launch Kitty terminal
 - `Alt+b` - Launch Brave browser
+- `Alt+q` - Close active window
 - `Ctrl+Space` - Launch Rofi application launcher
 - `Ctrl+Alt+l` - Lock screen (hyprlock)
 - `Alt+p` - Power menu (rofi-powermenu)
@@ -193,8 +196,8 @@ Replace the hostname in the build commands with your own:
 - `Alt+Shift+b` - Balance window sizes
 
 **Layouts:**
-- `Alt+/` - Toggle horizontal/vertical tiles layout
-- `Alt+,` - Toggle horizontal/vertical accordion layout
+- `Alt+/` - Cycle horizontal/vertical tiles layout
+- `Alt+,` - Cycle horizontal/vertical accordion layout
 
 **Workspaces:**
 - `Alt+1-5` - Switch to workspace 1-5
@@ -205,6 +208,12 @@ Replace the hostname in the build commands with your own:
 - `Alt+r` - Enter resize mode
 - `h/j/k/l` - Resize window (in resize mode)
 - `Enter/Esc` - Exit resize mode
+
+**Applications (skhd):**
+- `Alt+k` - Launch Kitty terminal
+- `Alt+b` - Launch Brave browser
+- `Ctrl+Alt+p` - Take screenshot
+- `Ctrl+Alt+l` - Lock screen
 
 **System:**
 - `Alt+Shift+r` - Reload Aerospace config

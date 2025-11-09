@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, pkgs-unstable, config, ... }:
 
 {
   imports = [
@@ -8,6 +8,7 @@
     ./hardware.nix
     ./network.nix
     ../../modules/stylix.nix
+    ../../modules/system-optimization.nix
   ];
 
   networking.hostName = "thinkFREE";
@@ -16,15 +17,15 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-  users.users.safeith = {
+  users.users.${config.userConfig.personalUsername} = {
     isNormalUser = true;
-    description = "Hojjat";
+    description = config.userConfig.Name;
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
   };
 
   security.sudo.extraRules = [{
-    users = [ "safeith" ];
+    users = [ config.userConfig.personalUsername ];
     commands = [{
       command = "/run/current-system/sw/bin/nixos-rebuild";
       options = [ "NOPASSWD" ];
@@ -52,7 +53,7 @@
     _1password-gui = {
       enable = true;
       package = pkgs-unstable._1password-gui;
-      polkitPolicyOwners = [ "safeith" ];
+      polkitPolicyOwners = [ config.userConfig.personalUsername ];
     };
   };
 

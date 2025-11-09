@@ -1,11 +1,13 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
-  system.primaryUser = "hojjat.alimohammadi";
+  imports = [ ../../modules/system-optimization.nix ];
 
-  users.users."hojjat.alimohammadi" = {
-    name = "hojjat.alimohammadi";
-    home = "/Users/hojjat.alimohammadi";
+  system.primaryUser = config.userConfig.workUsername;
+
+  users.users.${config.userConfig.workUsername} = {
+    name = config.userConfig.workUsername;
+    home = "/Users/${config.userConfig.workUsername}";
   };
 
   environment.systemPackages = with pkgs; [ ];
@@ -16,7 +18,7 @@
 
   environment.etc."sudoers.d/darwin-rebuild".text = ''
     Defaults env_keep += "TERMINFO TERMINFO_DIRS"
-    hojjat.alimohammadi ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/darwin-rebuild
+    ${config.userConfig.workUsername} ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/darwin-rebuild
   '';
 
   system.defaults.dock = {

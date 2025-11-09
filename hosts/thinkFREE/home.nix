@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
-  home.username = "safeith";
-  home.homeDirectory = "/home/safeith";
+  home.username = config.userConfig.personalUsername;
+  home.homeDirectory = "/home/${config.userConfig.personalUsername}";
 
   imports = [
     ../../modules/acli.nix

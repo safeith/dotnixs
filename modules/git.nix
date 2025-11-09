@@ -1,10 +1,10 @@
-{ pkgs, lib, secretsPath, ... }:
+{ pkgs, lib, config, ... }:
 
 let
   isWork = pkgs.stdenv.isDarwin;
-  secrets = import secretsPath;
 
-in {
+in
+{
   home.file.".gitignore" = lib.mkIf isWork {
     text = ''
       */tmp
@@ -27,8 +27,8 @@ in {
 
   programs.git = {
     enable = true;
-    userName = "Hojjat";
-    userEmail = if isWork then secrets.workEmail else secrets.personalEmail;
+    userName = config.userConfig.Name;
+    userEmail = if isWork then config.userConfig.workEmail else config.userConfig.personalEmail;
 
     signing = {
       signByDefault = true;
@@ -67,21 +67,11 @@ in {
     includes = lib.mkIf isWork [
       {
         condition = "gitdir:~/JeT/";
-        contents = {
-          user = {
-            email = secrets.workEmail;
-            name = "Hojjat";
-          };
-        };
+        contents = { user = { email = config.userConfig.workEmail; }; };
       }
       {
         condition = "gitdir:~/HAM/";
-        contents = {
-          user = {
-            email = secrets.personalEmail;
-            name = "Hojjat";
-          };
-        };
+        contents = { user = { email = config.userConfig.personalEmail; }; };
       }
     ];
   };

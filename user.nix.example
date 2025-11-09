@@ -1,4 +1,5 @@
 {
+  Name = "Your Full Name";
   workEmail = "work-email@example.com";
   personalEmail = "personal-email@example.com";
   workUsername = "work-username";

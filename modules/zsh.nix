@@ -10,7 +10,6 @@
     shellAliases = {
       vim = "nvim";
       vi = "nvim";
-      nfmt = "nvim +':lua vim.lsp.buf.format()' +wq";
       rebuild-work =
         "sudo darwin-rebuild switch --flake ~/.config/nix#F4MWR9VVCT --impure";
       rebuild-personal =

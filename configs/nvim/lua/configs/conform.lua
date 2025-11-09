@@ -9,7 +9,15 @@ local options = {
     rust = { "rustfmt" },
     terraform = { "tflint" },
     yaml = { "yamlls" },
-    nix = { "nixfmt" },
+    nix = { "nixpkgs-fmt" },
+  },
+
+  formatters = {
+    ["nixpkgs-fmt"] = {
+      command = "nixpkgs-fmt",
+      args = { "$FILENAME" },
+      stdin = false,
+    },
   },
 
   format_on_save = function(bufnr)

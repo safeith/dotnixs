@@ -1,11 +1,8 @@
-{ secretsPath, ... }:
+{ config, ... }:
 
-let
-  secrets = import secretsPath;
-in
 {
-  home.username = secrets.workUsername;
-  home.homeDirectory = "/Users/${secrets.workUsername}";
+  home.username = config.userConfig.workUsername;
+  home.homeDirectory = "/Users/${config.userConfig.workUsername}";
 
   imports = [
     ../../modules/aerospace.nix

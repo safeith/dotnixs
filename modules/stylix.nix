@@ -1,3 +1,6 @@
+# System-wide theming configuration using Stylix
+# Provides consistent theming across all applications and desktop environments
+# Base16 scheme: Catppuccin Mocha (dark theme)
 { config, pkgs, lib, ... }:
 
 {

@@ -14,7 +14,6 @@
       gopls
       gotools
       lua-language-server
-      nixfmt-classic
       pyright
       rust-analyzer
       rustfmt
