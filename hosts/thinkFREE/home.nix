@@ -5,6 +5,7 @@
   home.homeDirectory = "/home/safeith";
 
   imports = [
+    ../../modules/acli.nix
     ../../modules/git.nix
     ../../modules/hyprland.nix
     ../../modules/hyprland-extras.nix
