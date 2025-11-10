@@ -23,7 +23,7 @@ in {
                        color=0xdd${colors.base00}
 
       sketchybar --default icon.font="JetBrainsMono Nerd Font:Regular:20.0" \
-                           icon.color=0xff${colors.base0C} \
+                           icon.color=0xff${colors.base05} \
                            label.font="JetBrainsMono Nerd Font:SemiBold:15.0" \
                            label.color=0xff${colors.base05} \
                            padding_left=2 \
@@ -36,19 +36,16 @@ in {
       sketchybar --add item clock right \
                  --set clock update_freq=1 \
                            icon="󱑂" \
-                           icon.color=0xff${colors.base0E} \
                            script="$PLUGIN_DIR/clock.sh"
 
       sketchybar --add item date right \
                  --set date update_freq=60 \
                            icon="󰃭" \
-                           icon.color=0xff${colors.base0A} \
                            script="$PLUGIN_DIR/date.sh"
 
       sketchybar --add item keyboard right \
                  --set keyboard update_freq=1 \
                            icon="󰌌" \
-                           icon.color=0xff${colors.base0C} \
                            script="$PLUGIN_DIR/keyboard.sh"
 
       sketchybar --add item network right \
@@ -56,7 +53,6 @@ in {
                            icon="󰈀" \
                            label.padding_left=0 \
                            label.padding_right=0 \
-                           icon.color=0xff${colors.base0B} \
                            script="$PLUGIN_DIR/network.sh"
 
       sketchybar --add item volume right \
@@ -87,14 +83,12 @@ in {
 
       sketchybar --add item separator_left1 left \
                  --set separator_left1 icon="|" \
-                           icon.color=0xff${colors.base03} \
                            label.drawing=off \
                            padding_left=0 \
                            padding_right=0
 
       sketchybar --add item front_app left \
                  --set front_app script="$PLUGIN_DIR/front_app.sh" \
-                           icon.color=0xff${colors.base0D} \
                            label.font="JetBrainsMono Nerd Font:Bold:15.0" \
                  --subscribe front_app front_app_switched aerospace_workspace_change
 
@@ -166,12 +160,12 @@ in {
       if [ -n "$INTERFACE" ]; then
         IP=$(ipconfig getifaddr "$INTERFACE" 2>/dev/null)
         if [ -n "$IP" ]; then
-          sketchybar --set $NAME icon="󰖩" icon.color=0xff${colors.base0B} label=""
+          sketchybar --set $NAME icon="󰖩" label=""
         else
-          sketchybar --set $NAME icon="󰖪" icon.color=0xff${colors.base08} label=""
+          sketchybar --set $NAME icon="󰖪" label=""
         fi
       else
-        sketchybar --set $NAME icon="󰖪" icon.color=0xff${colors.base08} label=""
+        sketchybar --set $NAME icon="󰖪" label=""
       fi
     '';
     executable = true;
@@ -193,7 +187,7 @@ in {
         ICON=""
       fi
 
-      sketchybar --set $NAME icon="$ICON" icon.color=0xff${colors.base0B} label="$VOLUME%"
+      sketchybar --set $NAME icon="$ICON" label="$VOLUME%"
     '';
     executable = true;
   };
@@ -224,7 +218,7 @@ in {
         fi
       fi
 
-      sketchybar --set $NAME icon="$ICON" icon.color=0xff${colors.base09} label="$PERCENTAGE%"
+      sketchybar --set $NAME icon="$ICON" label="$PERCENTAGE%"
     '';
     executable = true;
   };
