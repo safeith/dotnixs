@@ -113,27 +113,6 @@ in {
     executable = true;
   };
 
-  home.file.".config/sketchybar/plugins/cpu.sh" = {
-    text = ''
-      #!/bin/bash
-      CPU_USAGE=$(top -l 2 -n 0 -F | grep "CPU usage" | tail -1 | awk '{print $3}' | sed 's/%//')
-      sketchybar --set $NAME label="$CPU_USAGE%"
-    '';
-    executable = true;
-  };
-
-  home.file.".config/sketchybar/plugins/memory.sh" = {
-    text = ''
-      #!/bin/bash
-      MEMORY_USED=$(memory_pressure | grep "System-wide memory free percentage:" | awk '{print 100-$5}' | sed 's/%//')
-      if [ -z "$MEMORY_USED" ]; then
-        MEMORY_USED=$(vm_stat | awk '/Pages active:/ {active=$3} /Pages wired down:/ {wired=$4} /Pages free:/ {free=$3} END {gsub(/\./, "", active); gsub(/\./, "", wired); gsub(/\./, "", free); printf "%.0f", ((active+wired)/(active+wired+free))*100}')
-      fi
-      sketchybar --set $NAME label="$MEMORY_USED%"
-    '';
-    executable = true;
-  };
-
   home.file.".config/sketchybar/plugins/keyboard.sh" = {
     text = ''
       #!/bin/bash
