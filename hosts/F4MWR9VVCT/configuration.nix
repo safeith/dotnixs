@@ -62,9 +62,12 @@
       upgrade = true;
     };
 
-    taps = [ "nikitabobko/tap" ];
+    taps = [
+      "nikitabobko/tap"
+      "atlassian/homebrew-acli"
+    ];
 
-    brews = [ ];
+    brews = [ "acli" ];
 
     casks = [
       "nikitabobko/tap/aerospace"
