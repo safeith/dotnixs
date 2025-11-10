@@ -147,10 +147,10 @@ in {
 
       case $LAYOUT in
         *Persian*|*Farsi*)
-          DISPLAY="FA"
+          DISPLAY="ir"
           ;;
         *)
-          DISPLAY="EN"
+          DISPLAY="en"
           ;;
       esac
 
