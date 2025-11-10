@@ -121,8 +121,8 @@ in {
 
         "hyprland/language" = {
           format = " {}";
-          format-en = "EN";
-          format-fa = "FA";
+          format-en = "us";
+          format-fa = "ir";
           tooltip = false;
         };
       };
@@ -139,7 +139,7 @@ in {
       }
 
       window#waybar {
-        background-color: rgba(30, 30, 46, 0.87);
+        background-color: #${colors.base00};
         color: #${colors.base05};
         padding: 0 8px;
         border-radius: 10px;
@@ -172,7 +172,7 @@ in {
       }
 
       #window {
-        color: #${colors.base0D};
+        color: #${colors.base05};
         font-weight: bold;
         padding-left: 8px;
         padding-right: 8px;
@@ -180,15 +180,17 @@ in {
         background: transparent;
       }
 
+      /* Default module styling - all modules except powermenu */
       #clock,
       #custom-date,
-      #custom-power,
       #custom-power-profile,
       #pulseaudio,
       #battery,
       #tray,
       #idle_inhibitor,
-      #language {
+      #language,
+      #custom-power {
+        color: #${colors.base05};
         padding-left: 6px;
         padding-right: 6px;
         margin-left: 0px;
@@ -196,27 +198,18 @@ in {
         background: transparent;
       }
 
-      #clock {
-        color: #${colors.base0E};
-      }
-
-      #custom-date {
-        color: #${colors.base0A};
-      }
-
+      /* Module-specific overrides */
       #custom-power {
         color: #${colors.base08};
         margin-right: 8px;
       }
 
-      #pulseaudio {
-        color: #${colors.base0B};
+      #idle_inhibitor,
+      #custom-power-profile {
+        margin-right: 4px;
       }
 
-      #battery {
-        color: #${colors.base09};
-      }
-
+      /* Battery state colors */
       #battery.warning {
         color: #${colors.base0A};
       }
@@ -224,36 +217,6 @@ in {
       #battery.critical {
         color: #${colors.base08};
       }
-
-      #tray {
-        color: #${colors.base05};
-      }
-
-      #idle_inhibitor {
-        color: #${colors.base0E};
-        margin-right: 4px;
-      }
-
-       #idle_inhibitor.activated {
-         color: #${colors.base08};
-       }
-
-       #language {
-         color: #${colors.base0B};
-       }
-
-       #custom-power-profile {
-         color: #${colors.base0C};
-         margin-right: 4px;
-       }
-
-       #custom-power-profile.power-saver {
-         color: #${colors.base0B};
-       }
-
-       #custom-power-profile.performance {
-         color: #${colors.base08};
-       }
     '';
   };
 

@@ -29,20 +29,26 @@
     # Automatic garbage collection
     gc = {
       automatic = true;
+      options = "--delete-older-than 7d";
+    } // lib.optionalAttrs pkgs.stdenv.isDarwin {
       interval = {
         Hour = 10;
         Weekday = 5; # 5 = Friday
       };
-      options = "--delete-older-than 7d";
+    } // lib.optionalAttrs pkgs.stdenv.isLinux {
+      dates = "weekly";
     };
 
     # Automatic store optimization
     optimise = {
       automatic = true;
+    } // lib.optionalAttrs pkgs.stdenv.isDarwin {
       interval = {
         Hour = 11;
         Weekday = 5; # 5 = Friday
       };
+    } // lib.optionalAttrs pkgs.stdenv.isLinux {
+      dates = [ "weekly" ];
     };
   };
 
