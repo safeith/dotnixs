@@ -10,7 +10,7 @@
 - **Test without switching**: `nixos-rebuild test --flake .#<hostname> --impure`
 - **Check flake**: `nix flake check` (validates flake structure and evaluates configurations)
 - **Update flake inputs**: `nix flake update`
-- **Format Nix**: `nvim +":lua vim.lsp.buf.format()" +wq <file.nix>` or `nixpkgs-fmt <file.nix>`
+- **Format Nix**:`nixpkgs-fmt <file.nix>`
 - **Format Lua**: `stylua <file.lua>`
 
 ## Secrets Management

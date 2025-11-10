@@ -5,7 +5,6 @@
   nix = {
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
-      auto-optimise-store = true;
       warn-dirty = false;
 
       # Binary cache configuration
@@ -13,6 +12,7 @@
         "https://cache.nixos.org/"
         "https://nix-community.cachix.org"
       ];
+
       trusted-public-keys = [
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
@@ -29,14 +29,20 @@
     # Automatic garbage collection
     gc = {
       automatic = true;
-      dates = "weekly";
+      interval = {
+        Hour = 10;
+        Weekday = 5; # 5 = Friday
+      };
       options = "--delete-older-than 7d";
     };
 
     # Automatic store optimization
     optimise = {
       automatic = true;
-      dates = [ "03:45" ];
+      interval = {
+        Hour = 11;
+        Weekday = 5; # 5 = Friday
+      };
     };
   };
 
@@ -59,8 +65,7 @@
       ${if pkgs.stdenv.isLinux then
         "sudo nixos-rebuild switch --flake .#$(hostname) --impure"
       else
-        "darwin-rebuild switch --flake .#$(hostname) --impure"
-      }
+        "darwin-rebuild switch --flake .#$(hostname) --impure"}
     '')
   ];
 }
