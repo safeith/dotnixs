@@ -54,6 +54,8 @@ in {
       sketchybar --add item network right \
                  --set network update_freq=5 \
                            icon="󰈀" \
+                           label.padding_left=0 \
+                           label.padding_right=0 \
                            icon.color=0xff${colors.base0B} \
                            script="$PLUGIN_DIR/network.sh"
 
