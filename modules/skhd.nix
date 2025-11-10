@@ -7,7 +7,6 @@
     alt - b : open -a "Brave Browser"
     alt - k : open -a "kitty"
     ctrl + alt - p : open -a "Screenshot"
-    ctrl + alt - l : pmset displaysleepnow
   '';
 
   launchd.agents.skhd = {

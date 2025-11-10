@@ -213,7 +213,6 @@ Replace the hostname in the build commands with your own:
 - `Alt+k` - Launch Kitty terminal
 - `Alt+b` - Launch Brave browser
 - `Ctrl+Alt+p` - Take screenshot
-- `Ctrl+Alt+l` - Lock screen
 
 **System:**
 - `Alt+Shift+r` - Reload Aerospace config
