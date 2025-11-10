@@ -142,7 +142,7 @@
         "$mod, v, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
         "$mod SHIFT, v, exec, cliphist list | rofi -dmenu | cliphist delete"
         "$mod SHIFT, c, exec, cliphist wipe && notify-send 'Clipboard' 'History cleared'"
-        "CTRL ALT, l, exec, hyprlock"
+        "CTRL, q, exec, hyprlock"
         "$mod, p, exec, ~/.local/bin/rofi-powermenu"
 
         "$mod SHIFT, F1, exec, powerprofilesctl set power-saver && notify-send 'Power Profile' 'Power Saver'"

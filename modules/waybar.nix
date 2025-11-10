@@ -120,7 +120,7 @@ in {
         };
 
         "hyprland/language" = {
-          format = " {}";
+          format = "<span size='large'></span> {}";
           format-en = "us";
           format-fa = "ir";
           tooltip = false;

@@ -25,12 +25,18 @@ in {
       { id = "cimiefiiaegbelhefglklhhakcgmhkai"; }
       { id = "padekgcemlokbadohgkifijomclgjgif"; }
       { id = "mnjggcdmjocbbbhaepdhchncahnbgone"; }
+      { id = "eimadpbcbfnmbkopoojfekhnkhdbieeh"; }
     ];
   };
 
   programs.btop.enable = true;
   programs.command-not-found.enable = true;
 
-  services.podman.enable = lib.mkIf isPersonal true;
-  services.easyeffects.enable = lib.mkIf isPersonal true;
+  services.podman.enable = lib.mkIf
+    isPersonal
+    true;
+  services.easyeffects.enable = lib.mkIf
+    isPersonal
+    true;
 }
+
