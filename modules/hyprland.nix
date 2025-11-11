@@ -55,8 +55,8 @@
       };
 
       general = {
-        gaps_in = 4;
-        gaps_out = 8;
+        gaps_in = 2;
+        gaps_out = 4;
         border_size = 2;
         "col.active_border" = "rgb(${config.lib.stylix.colors.base0D})";
         "col.inactive_border" = "rgb(45475a)";
