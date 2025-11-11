@@ -24,7 +24,7 @@ in {
 
       sketchybar --default icon.font="JetBrainsMono Nerd Font:Regular:20.0" \
                            icon.color=0xff${colors.base05} \
-                           label.font="JetBrainsMono Nerd Font:SemiBold:15.0" \
+                           label.font="JetBrainsMono Nerd Font:Regular:15.0" \
                            label.color=0xff${colors.base05} \
                            padding_left=2 \
                            padding_right=2 \
@@ -61,7 +61,6 @@ in {
 
       sketchybar --add item battery right \
                  --set battery update_freq=120 \
-                           icon.font="JetBrainsMono Nerd Font:Regular:20.0" \
                            script="$PLUGIN_DIR/battery.sh" \
                  --subscribe battery system_woke power_source_change
 
@@ -72,7 +71,6 @@ in {
                    --subscribe "space.$sid" aerospace_workspace_change \
                    --set "space.$sid" \
                    icon="○" \
-                   icon.font="JetBrainsMono Nerd Font:Bold:20.0" \
                    icon.padding_left=8 \
                    icon.padding_right=8 \
                    label.drawing=off \
@@ -89,7 +87,6 @@ in {
 
       sketchybar --add item front_app left \
                  --set front_app script="$PLUGIN_DIR/front_app.sh" \
-                           label.font="JetBrainsMono Nerd Font:Bold:15.0" \
                  --subscribe front_app front_app_switched aerospace_workspace_change
 
       sketchybar --update
