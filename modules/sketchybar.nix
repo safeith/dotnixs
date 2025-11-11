@@ -24,7 +24,7 @@ in {
 
       sketchybar --default icon.font="JetBrainsMono Nerd Font:Regular:20.0" \
                            icon.color=0xff${colors.base05} \
-                           label.font="JetBrainsMono Nerd Font:Regular:15.0" \
+                           label.font="JetBrainsMono Nerd Font:SemiBold:14.0" \
                            label.color=0xff${colors.base05} \
                            padding_left=2 \
                            padding_right=2 \
