@@ -54,6 +54,10 @@
         source ~/.zsh/plugins/ohmyzsh/plugins/command-not-found/command-not-found.plugin.zsh
       fi
 
+      if [ -f ~/.zsh/custom.zsh ]; then
+        source ~/.zsh/custom.zsh
+      fi
+
       # Auto-start tmux if in Kitty and not already inside tmux
       if command -v tmux >/dev/null 2>&1; then
         if [[ -z "$TMUX" ]] && [[ -n "$PS1" ]] && [[ "$TERM" == "xterm-kitty" ]]; then

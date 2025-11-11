@@ -11,6 +11,7 @@ let
   sharedPackages = with pkgs; [
     # Cloud & Infrastructure
     awscli2
+    autossh
     cloudflared
     (google-cloud-sdk.withExtraComponents
       [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
