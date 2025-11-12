@@ -16,7 +16,7 @@ in {
                        sticky=off \
                        padding_left=8 \
                        padding_right=8 \
-                       margin=8 \
+                       margin=4 \
                        y_offset=4 \
                        corner_radius=10 \
                        display=all \

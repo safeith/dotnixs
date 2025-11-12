@@ -23,16 +23,16 @@
     ]
 
     [gaps]
-    inner.horizontal = 10
-    inner.vertical = 10
-    outer.left = 10
-    outer.bottom = 10
+    inner.horizontal = 6
+    inner.vertical = 6
+    outer.left = 6
+    outer.right = 6
+    outer.bottom = 6
     outer.top = [
-      { monitor."built-in" = 14 },
-      { monitor."main" = 46 },
-      46
+      { monitor."built-in" = 10 },
+      { monitor."main" = 42 },
+      42
     ]
-    outer.right = 10
 
     [workspace-to-monitor-force-assignment]
     1 = 'main'
