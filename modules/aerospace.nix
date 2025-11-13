@@ -23,8 +23,8 @@
     ]
 
     [gaps]
-    inner.horizontal = 6
-    inner.vertical = 6
+    inner.horizontal = 8
+    inner.vertical = 8
     outer.left = 6
     outer.right = 6
     outer.bottom = 6
