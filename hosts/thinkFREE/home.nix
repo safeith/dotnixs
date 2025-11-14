@@ -31,17 +31,5 @@
     components = [ "pkcs11" "secrets" "ssh" ];
   };
 
-  xdg.desktopEntries."1password" = {
-    name = "1Password";
-    exec =
-      "1password --enable-features=UseOzonePlatform --ozone-platform=wayland %U";
-    icon = "1password";
-    type = "Application";
-    terminal = false;
-    categories = [ "Office" ];
-    mimeType = [ "x-scheme-handler/onepassword" ];
-    settings = { StartupWMClass = "1Password"; };
-  };
-
   home.stateVersion = "25.05";
 }
