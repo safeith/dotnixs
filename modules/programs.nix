@@ -26,6 +26,7 @@ in {
       { id = "padekgcemlokbadohgkifijomclgjgif"; }
       { id = "mnjggcdmjocbbbhaepdhchncahnbgone"; }
       { id = "eimadpbcbfnmbkopoojfekhnkhdbieeh"; }
+      { id = "nngceckbapebfimnlniiiahkandclblb"; }
     ];
   };
 

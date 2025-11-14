@@ -78,6 +78,7 @@ let
     heimdall
 
     # Desktop Applications
+    bitwarden-desktop
     electrum
     localsend
     protonvpn-gui
