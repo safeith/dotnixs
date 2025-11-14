@@ -21,5 +21,23 @@ map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", { desc = "Navigate to down Tmux 
 map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", { desc = "Navigate to up Tmux pane" })
 map("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", { desc = "Navigate to right Tmux pane" })
 
--- Neogit mappings
-map("n", "<leader>gg", "<cmd> Neogit<CR>", { desc = "Open Neogit" })
+-- Flash mappings
+map({ "n", "x", "o" }, "s", function()
+  require("flash").jump()
+end, { desc = "Flash Jump" })
+
+map({ "n", "x", "o" }, "S", function()
+  require("flash").treesitter()
+end, { desc = "Flash Treesitter" })
+
+map("o", "r", function()
+  require("flash").remote()
+end, { desc = "Remote Flash" })
+
+map({ "o", "x" }, "R", function()
+  require("flash").treesitter_search()
+end, { desc = "Treesitter Search" })
+
+map("c", "<c-s>", function()
+  require("flash").toggle()
+end, { desc = "Toggle Flash Search" })

@@ -101,68 +101,30 @@ return {
   },
 
   {
-    "NeogitOrg/neogit",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "sindrets/diffview.nvim",
-      "nvim-telescope/telescope.nvim",
-    },
-    lazy = false,
-  },
-  {
     "folke/noice.nvim",
     event = "VeryLazy",
-    opts = {},
     dependencies = {
       "MunifTanjim/nui.nvim",
-      -- "rcarriga/nvim-notify",
+    },
+    opts = {
+      cmdline = {
+        view = "cmdline_popup",
+        opts = {
+          position = {
+            row = "20%",
+            col = "50%",
+          },
+        },
+      },
     },
   },
+
   {
-    "folke/flash.nvim",
+    "rcarriga/nvim-notify",
     event = "VeryLazy",
-    opts = {},
-    keys = {
-      {
-        "s",
-        mode = { "n", "x", "o" },
-        function()
-          require("flash").jump()
-        end,
-        desc = "Flash",
-      },
-      {
-        "S",
-        mode = { "n", "x", "o" },
-        function()
-          require("flash").treesitter()
-        end,
-        desc = "Flash Treesitter",
-      },
-      {
-        "r",
-        mode = "o",
-        function()
-          require("flash").remote()
-        end,
-        desc = "Remote Flash",
-      },
-      {
-        "R",
-        mode = { "o", "x" },
-        function()
-          require("flash").treesitter_search()
-        end,
-        desc = "Treesitter Search",
-      },
-      {
-        "<c-s>",
-        mode = { "c" },
-        function()
-          require("flash").toggle()
-        end,
-        desc = "Toggle Flash Search",
-      },
+    opts = {
+      stages = "fade",
+      timeout = 3000,
     },
   },
 
@@ -182,5 +144,11 @@ return {
     keys = {
       { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
     },
+  },
+
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    opts = {},
   },
 }
