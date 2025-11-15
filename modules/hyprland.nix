@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -58,8 +58,8 @@
         gaps_in = 2;
         gaps_out = 4;
         border_size = 2;
-        "col.active_border" = "rgb(${config.lib.stylix.colors.base0D})";
-        "col.inactive_border" = "rgb(45475a)";
+        "col.active_border" = lib.mkForce ("rgb(${config.lib.stylix.colors.base0B})");
+        "col.inactive_border" = lib.mkForce ("rgb(${config.lib.stylix.colors.base08})");
         layout = "dwindle";
         allow_tearing = false;
         no_border_on_floating = false;

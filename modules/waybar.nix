@@ -162,13 +162,13 @@ in {
       }
 
       #workspaces button.active {
-        color: #${colors.base0D};
+        color: #${colors.base0B};
         background: transparent;
       }
 
       #workspaces button:hover {
         background: rgba(137, 180, 250, 0.1);
-        color: #${colors.base0D};
+        color: #${colors.base0B};
       }
 
       #window {

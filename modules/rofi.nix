@@ -33,8 +33,8 @@ in {
           fg = mkLiteral "#${colors.base05}";
           fg-alt = mkLiteral "#${colors.base04}";
 
-          border = mkLiteral "#${colors.base0D}";
-          blue = mkLiteral "#${colors.base0D}";
+          border = mkLiteral "#${colors.base0B}";
+          blue = mkLiteral "#${colors.base0B}";
           red = mkLiteral "#${colors.base08}";
 
           border-colour = mkLiteral "@border";

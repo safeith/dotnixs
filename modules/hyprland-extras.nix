@@ -45,7 +45,7 @@ in {
     settings = {
       background-color = lib.mkForce "#${colors.base00}";
       text-color = lib.mkForce "#${colors.base05}";
-      border-color = lib.mkForce "#${colors.base0D}";
+      border-color = lib.mkForce "#${colors.base0B}";
       border-radius = lib.mkForce 10;
       border-size = lib.mkForce 2;
       default-timeout = lib.mkForce 5000;
@@ -79,7 +79,7 @@ in {
         fade_on_empty = false;
         font_color = "rgb(${colors.base05})";
         inner_color = "rgb(${colors.base00})";
-        outer_color = "rgb(${colors.base0D})";
+        outer_color = "rgb(${colors.base0B})";
         outline_thickness = 2;
         placeholder_text =
           "<span foreground='##${colors.base05}'>Password...</span>";
