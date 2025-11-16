@@ -177,6 +177,7 @@
 
       windowrulev2 = [
         "suppressevent maximize, class:.*"
+        "size 600 400, class:^.protonvpn-app-wrapped$"
       ];
     };
 
