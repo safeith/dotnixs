@@ -155,7 +155,7 @@
         ", XF86AudioPrev, exec, playerctl previous"
         ", XF86AudioStop, exec, playerctl stop"
 
-        "$mod, q, killactive"
+        "CTRL, q, killactive"
         "$mod SHIFT, r, exec, hyprctl reload"
         "$mod SHIFT, e, exit"
 
