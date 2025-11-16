@@ -60,17 +60,6 @@ let
     pkgs-unstable.opencode
   ];
 
-  # Custom zoom with scaling for HiDPI displays
-  zoom-scaled = pkgs.symlinkJoin {
-    name = "zoom-us";
-    paths = [ pkgs-unstable.zoom-us ];
-    buildInputs = [ pkgs.makeWrapper ];
-    postBuild = ''
-      wrapProgram $out/bin/zoom \
-        --set QT_SCALE_FACTOR 1.25
-    '';
-  };
-
   # Linux-specific packages (personal use)
   personalPackages = with pkgs; [
     # Android Development
@@ -86,14 +75,21 @@ let
     spotify
     tor-browser
     vlc
+    geeqie
+    pkgs-unstable.zoom-us
 
     # System Integration
     kdePackages.ksshaskpass
     libnotify
     wl-clipboard
+    xorg.xrdb
 
-    # Custom packages
-    zoom-scaled
+    # Qt/GTK Theming
+    libsForQt5.qt5ct
+    qt6ct
+    libsForQt5.qtstyleplugin-kvantum
+    kdePackages.qtstyleplugin-kvantum
+
   ];
 
   # macOS-specific packages (work environment)

@@ -81,7 +81,10 @@
               imports = [
                 host.homeConfig
                 ./modules/user.nix
-              ] ++ lib.optionals includeStyleix [ stylix.homeModules.stylix ];
+              ] ++ lib.optionals includeStyleix [
+                stylix.homeModules.stylix
+                ./modules/stylix-home.nix
+              ];
             } // lib.optionalAttrs (!isLinux) {
               nixpkgs.config.allowUnfree = true; # Only needed for Darwin
             };

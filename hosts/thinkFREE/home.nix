@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, ... }:
 
 {
   home.username = config.userConfig.personalUsername;
@@ -14,10 +14,40 @@
     ../../modules/packages.nix
     ../../modules/programs.nix
     ../../modules/rofi.nix
+    ../../modules/stylix-home.nix
     ../../modules/tmux.nix
     ../../modules/waybar.nix
     ../../modules/zsh.nix
   ];
+
+  # X resources configuration (DPI and font rendering)
+  xresources.properties = {
+    "Xft.dpi" = 120;
+    "Xft.antialias" = 1;
+    "Xft.hinting" = 1;
+    "Xft.hintstyle" = "hintslight";
+    "Xft.rgba" = "rgb";
+    "Xft.lcdfilter" = "lcddefault";
+  };
+
+  # GTK icon theme configuration (Stylix doesn't auto-configure this)
+  gtk = {
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
+  };
+
+  # Qt icon theme configuration
+  xdg.configFile."qt5ct/qt5ct.conf".text = lib.mkAfter ''
+    [Icons]
+    Theme=Papirus-Dark
+  '';
+
+  xdg.configFile."qt6ct/qt6ct.conf".text = lib.mkAfter ''
+    [Icons]
+    Theme=Papirus-Dark
+  '';
 
   home.sessionVariables = {
     SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/keyring/ssh";

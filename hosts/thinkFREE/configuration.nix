@@ -7,7 +7,7 @@
     ./desktop.nix
     ./hardware.nix
     ./network.nix
-    ../../modules/stylix.nix
+    ../../modules/stylix-system.nix
     ../../modules/system-optimization.nix
   ];
 

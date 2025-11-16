@@ -28,6 +28,7 @@
       ];
 
       exec-once = [
+        "${pkgs.xorg.xrdb}/bin/xrdb -merge ~/.Xresources"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
         "${pkgs.networkmanagerapplet}/bin/nm-applet"
         "gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'"
