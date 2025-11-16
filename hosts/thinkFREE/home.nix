@@ -31,5 +31,11 @@
     components = [ "pkcs11" "secrets" "ssh" ];
   };
 
+  dconf.settings = {
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = ":";
+    };
+  };
+
   home.stateVersion = "25.05";
 }
