@@ -216,7 +216,7 @@ in {
     text = ''
       #!/bin/bash
       if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
-        sketchybar --set $NAME icon="●" icon.color=0xff${colors.base0D}
+        sketchybar --set $NAME icon="●" icon.color=0xff${colors.base0B}
       else
         sketchybar --set $NAME icon="●" icon.color=0xff${colors.base03}
       fi

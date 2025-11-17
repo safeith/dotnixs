@@ -18,7 +18,7 @@ in
       fzf.enable = true;
       gtk.enable = true;
       kitty.enable = true;
-      qt.enable = true;
+      qt.enable = isLinux;
       tmux.enable = true;
       vim.enable = true;
     };

@@ -101,8 +101,8 @@
     config = {
       ProgramArguments = [
         "${pkgs.jankyborders}/bin/borders"
-        "active_color=0xff${config.lib.stylix.colors.base0D}"
-        "inactive_color=0xff45475a"
+        "active_color=0xff${config.lib.stylix.colors.base0B}"
+        "inactive_color=0xff${config.lib.stylix.colors.base08}"
         "width=5.0"
       ];
       KeepAlive = true;
