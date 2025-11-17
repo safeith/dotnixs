@@ -35,20 +35,21 @@
     ]
 
     [workspace-to-monitor-force-assignment]
-    1 = 'main'
-    2 = 'main'
-    3 = 'main'
-    4 = 'main'
-    5 = 'main'
-    6 = 'HIDDENL'
-    7 = 'HIDDENR'
-
-    [[on-window-detected]]
-    if.workspace = '6'
-    run = 'move-node-to-workspace 5'
+    1 = ['main', 'built-in']
+    2 = ['main', 'built-in']
+    3 = ['main', 'built-in']
+    4 = ['main', 'built-in']
+    5 = ['main', 'built-in']
+    6 = ['built-in']
+    7 = 'HIDDENL'
+    8 = 'HIDDENR'
 
     [[on-window-detected]]
     if.workspace = '7'
+    run = 'move-node-to-workspace 5'
+
+    [[on-window-detected]]
+    if.workspace = '8'
     run = 'move-node-to-workspace 5'
 
     [mode.main.binding]
