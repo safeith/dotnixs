@@ -31,7 +31,8 @@
       "/System/Applications/Launchpad.app"
       "/Applications/Brave Browser.app"
       "/Applications/kitty.app"
-      "/Applications/1Password.app"
+      "/Applications/Obsidian.app"
+      "/Applications/Spotify.app"
       "/System/Applications/System Settings.app"
     ];
   };
@@ -80,6 +81,7 @@
       "spotify"
       "hiddenbar"
       "sublime-text"
+      "obsidian"
     ];
 
     masApps = { };
