@@ -28,11 +28,7 @@
     outer.left = 6
     outer.right = 6
     outer.bottom = 6
-    outer.top = [
-      { monitor."built-in" = 14 },
-      { monitor."main" = 42 },
-      42
-    ]
+    outer.top = 42
 
     [workspace-to-monitor-force-assignment]
     1 = ['main', 'built-in']
