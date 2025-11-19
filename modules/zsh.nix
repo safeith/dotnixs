@@ -107,7 +107,7 @@
       };
 
       format = "$directory$character";
-      right_format = "$git_branch$git_commit$git_state$git_metrics$git_status";
+      right_format = "$git_branch$git_commit$git_state$git_metrics$git_status$nix_shell";
 
       gcloud = {
         format = "[](sapphire)  [$project](sapphire) ";
