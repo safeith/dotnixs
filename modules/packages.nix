@@ -71,6 +71,7 @@ let
     electrum
     localsend
     protonvpn-gui
+    obsidian
     simple-scan
     spotify
     tor-browser
