@@ -1,7 +1,10 @@
 { pkgs, config, ... }:
 
 {
-  imports = [ ../../modules/system-optimization.nix ];
+  imports = [
+    ../../modules/system-optimization.nix
+    ../../modules/cloudflared.nix
+  ];
 
   system.primaryUser = config.userConfig.workUsername;
 
@@ -13,6 +16,15 @@
   environment.systemPackages = with pkgs; [ ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  networking = {
+    dns = [ "127.0.0.1" ];
+    knownNetworkServices = [
+      "Wi-Fi"
+      "Lenovo USB-C to LAN"
+      "USB 10/100/1000 LAN"
+    ];
+  };
 
   programs.zsh.enable = true;
 
