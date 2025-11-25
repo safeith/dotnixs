@@ -23,12 +23,12 @@
     ]
 
     [gaps]
-    inner.horizontal = 8
-    inner.vertical = 8
+    inner.horizontal = 6
+    inner.vertical = 6
     outer.left = 6
     outer.right = 6
     outer.bottom = 6
-    outer.top = 42
+    outer.top = 32
 
     [workspace-to-monitor-force-assignment]
     1 = ['main', 'built-in']

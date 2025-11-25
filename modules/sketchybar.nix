@@ -10,21 +10,21 @@ in {
 
       PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 
-      sketchybar --bar height=32 \
+      sketchybar --bar height=26 \
                        blur_radius=50 \
                        position=top \
                        sticky=off \
-                       padding_left=8 \
-                       padding_right=8 \
-                       margin=4 \
-                       y_offset=4 \
-                       corner_radius=10 \
+                       padding_left=4 \
+                       padding_right=4 \
+                       margin=0 \
+                       y_offset=0 \
+                       corner_radius=0 \
                        display=all \
                        color=0xdd${colors.base00}
 
-      sketchybar --default icon.font="JetBrainsMono Nerd Font:Regular:20.0" \
+      sketchybar --default icon.font="JetBrainsMono Nerd Font:Regular:16.0" \
                            icon.color=0xff${colors.base05} \
-                           label.font="JetBrainsMono Nerd Font:SemiBold:14.0" \
+                           label.font="JetBrainsMono Nerd Font:SemiBold:13.0" \
                            label.color=0xff${colors.base05} \
                            padding_left=2 \
                            padding_right=2 \
@@ -71,22 +71,17 @@ in {
                    --subscribe "space.$sid" aerospace_workspace_change \
                    --set "space.$sid" \
                    icon="○" \
-                   icon.padding_left=8 \
-                   icon.padding_right=8 \
+                   icon.padding_left=0 \
+                   icon.padding_right=12 \
                    label.drawing=off \
                    background.drawing=off \
                    click_script="${pkgs.aerospace}/bin/aerospace workspace $sid" \
                    script="$PLUGIN_DIR/aerospacer.sh $sid"
       done
 
-      sketchybar --add item separator_left1 left \
-                 --set separator_left1 icon="|" \
-                           label.drawing=off \
-                           padding_left=0 \
-                           padding_right=0
-
       sketchybar --add item front_app left \
-                 --set front_app script="$PLUGIN_DIR/front_app.sh" \
+                 --set front_app padding_left=0 \
+                           script="$PLUGIN_DIR/front_app.sh" \
                  --subscribe front_app front_app_switched aerospace_workspace_change
 
       sketchybar --update

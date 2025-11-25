@@ -20,8 +20,8 @@
 
   fonts = {
     sizes = {
-      applications = if pkgs.stdenv.isDarwin then 13 else 11;
-      desktop = if pkgs.stdenv.isDarwin then 13 else 11;
+      applications = if pkgs.stdenv.isDarwin then 12 else 11;
+      desktop = if pkgs.stdenv.isDarwin then 12 else 11;
     };
 
     serif = {
