@@ -95,8 +95,7 @@ let
 
   # macOS-specific packages (work environment)
   workPackages = with pkgs; [
-    # Add macOS-specific packages here when needed
-    # Currently using homebrew for most GUI applications
+    pkgs-unstable.cursor-cli
   ];
 
 in

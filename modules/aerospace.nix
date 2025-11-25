@@ -100,7 +100,8 @@
         "${pkgs.jankyborders}/bin/borders"
         "active_color=0xff${config.lib.stylix.colors.base0B}"
         "inactive_color=0xff${config.lib.stylix.colors.base08}"
-        "width=5.0"
+        "width=4.0"
+        "style=round"
       ];
       KeepAlive = true;
       RunAtLoad = true;
