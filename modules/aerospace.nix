@@ -28,7 +28,7 @@
     outer.left = 6
     outer.right = 6
     outer.bottom = 6
-    outer.top = 32
+    outer.top = 42
 
     [workspace-to-monitor-force-assignment]
     1 = ['main', 'built-in']

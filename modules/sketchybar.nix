@@ -10,15 +10,15 @@ in {
 
       PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 
-      sketchybar --bar height=26 \
+      sketchybar --bar height=32 \
                        blur_radius=50 \
                        position=top \
                        sticky=off \
                        padding_left=4 \
                        padding_right=4 \
-                       margin=0 \
-                       y_offset=0 \
-                       corner_radius=0 \
+                       margin=4 \
+                       y_offset=4 \
+                       corner_radius=10 \
                        display=all \
                        color=0xdd${colors.base00}
 
