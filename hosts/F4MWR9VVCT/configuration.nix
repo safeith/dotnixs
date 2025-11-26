@@ -68,7 +68,7 @@
       "atlassian/homebrew-acli"
     ];
 
-    brews = [ "acli" ];
+    brews = [ "acli" "podman" ];
 
     casks = [
       "nikitabobko/tap/aerospace"
@@ -82,6 +82,7 @@
       "hiddenbar"
       "sublime-text"
       "obsidian"
+      "podman-desktop"
     ];
 
     masApps = { };
