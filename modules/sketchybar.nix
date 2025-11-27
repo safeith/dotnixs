@@ -64,6 +64,14 @@ in {
                            script="$PLUGIN_DIR/battery.sh" \
                  --subscribe battery system_woke power_source_change
 
+      sketchybar --add item nix_logo left \
+                 --set nix_logo icon="" \
+                       icon.color=0xff${colors.base0D} \
+                       icon.padding_left=8 \
+                       icon.padding_right=8 \
+                       label.drawing=off \
+                       background.drawing=off
+
       sketchybar --add event aerospace_workspace_change
 
       for sid in 1 2 3 4 5; do
