@@ -36,6 +36,7 @@ in {
       sketchybar --add item clock right \
                  --set clock update_freq=1 \
                            icon="󱑂" \
+                           label.padding_right=12 \
                            script="$PLUGIN_DIR/clock.sh"
 
       sketchybar --add item date right \
