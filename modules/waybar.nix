@@ -15,7 +15,7 @@ in {
         margin-right = 4;
         margin-top = 4;
 
-        modules-left = [ "hyprland/workspaces" "hyprland/window" ];
+        modules-left = [ "custom/nix" "hyprland/workspaces" "hyprland/window" ];
         modules-center = [ ];
         modules-right = [
           "tray"
@@ -96,6 +96,11 @@ in {
               powerprofilesctl set power-saver
             fi
           '';
+        };
+
+        "custom/nix" = {
+          format = "<span size='large'></span>";
+          tooltip = false;
         };
 
         "custom/power" = {
@@ -199,6 +204,13 @@ in {
       }
 
       /* Module-specific overrides */
+      #custom-nix {
+        color: #${colors.base0D};
+        padding-left: 8px;
+        padding-right: 8px;
+        margin-right: 8px;
+      }
+
       #custom-power {
         color: #${colors.base08};
         margin-right: 8px;
