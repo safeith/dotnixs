@@ -18,21 +18,14 @@
     };
 
     consoleLogLevel = 0;
-    plymouth.enable = true;
 
     kernelParams = [
       "quiet"
       "loglevel=0"
-      "rd.systemd.show_status=false"
-      "rd.udev.log_level=3"
       "systemd.show_status=false"
-      "splash"
-      "vt.global_cursor_default=0"
-      "udev.log_priority=3"
+      "console=current"
     ];
   };
-
-  systemd.services.display-manager.after = [ "plymouth-quit.service" ];
 
   services = {
     getty.helpLine = "";

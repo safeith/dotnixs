@@ -61,6 +61,11 @@ in
     '';
   };
 
+  systemd.services.thinkfan = {
+    after = [ "greetd.service" ];
+    wantedBy = [ "multi-user.target" ];
+  };
+
   hardware = {
     sane = {
       enable = true;
