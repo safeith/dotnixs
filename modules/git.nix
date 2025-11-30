@@ -27,8 +27,6 @@ in
 
   programs.git = {
     enable = true;
-    userName = config.userConfig.Name;
-    userEmail = if isWork then config.userConfig.workEmail else config.userConfig.personalEmail;
 
     signing = {
       signByDefault = true;
@@ -36,7 +34,12 @@ in
       key = "~/.ssh/id_ed25519.pub";
     };
 
-    extraConfig = {
+    settings = {
+      user = {
+        name = config.userConfig.Name;
+        email = if isWork then config.userConfig.workEmail else config.userConfig.personalEmail;
+      };
+
       gpg.format = "ssh";
       gpg.ssh.program = "${pkgs.openssh}/bin/ssh-keygen";
 

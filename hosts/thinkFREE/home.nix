@@ -30,15 +30,6 @@
     "Xft.lcdfilter" = "lcddefault";
   };
 
-  # GTK icon theme configuration (Stylix doesn't auto-configure this)
-  gtk = {
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
-    };
-  };
-
-  # Qt icon theme configuration
   xdg.configFile."qt5ct/qt5ct.conf".text = lib.mkAfter ''
     [Icons]
     Theme=Papirus-Dark
@@ -67,5 +58,5 @@
     };
   };
 
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.11";
 }

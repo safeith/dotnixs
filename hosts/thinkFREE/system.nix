@@ -31,13 +31,16 @@
     getty.helpLine = "";
     power-profiles-daemon.enable = true;
     logind = {
-      lidSwitch = "suspend-then-hibernate";
-      lidSwitchExternalPower = "ignore";
-      lidSwitchDocked = "ignore";
-      extraConfig = ''
-        HandlePowerKey=suspend-then-hibernate
-        IdleAction=ignore
-      '';
+      settings = {
+        Login = {
+          HandlePowerKey = "suspend-then-hibernate";
+          IdleAction = "ignore";
+          HandleLidSwitch = "suspend-then-hibernate";
+          HandleLidSwitchDocked = "ignore";
+          HandleLidSwitchExternalPower = "ignore";
+        };
+      };
+
     };
   };
 }

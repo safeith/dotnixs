@@ -4,7 +4,7 @@ let colors = config.lib.stylix.colors;
 in {
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland;
+    package = pkgs.rofi;
     font = lib.mkForce "JetBrainsMono Nerd Font 11";
     terminal = lib.mkForce "${pkgs.kitty}/bin/kitty";
 

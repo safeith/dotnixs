@@ -87,7 +87,7 @@ let
 
     # Qt/GTK Theming
     libsForQt5.qt5ct
-    qt6ct
+    qt6Packages.qt6ct
     libsForQt5.qtstyleplugin-kvantum
     kdePackages.qtstyleplugin-kvantum
 

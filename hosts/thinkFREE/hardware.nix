@@ -49,16 +49,10 @@ in
     blueman.enable = true;
 
     udev = {
-      packages = [ pkgs.android-udev-rules ];
       extraRules = ''
         SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666"
       '';
     };
-
-    logind.extraConfig = ''
-      HandleLidSwitch=suspend-then-hibernate
-      HandleLidSwitchDocked=ignore
-    '';
   };
 
   systemd.services.thinkfan = {

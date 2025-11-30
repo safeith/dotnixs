@@ -27,7 +27,7 @@
 - Relative paths for modules: `./modules/stylix.nix`, `../../modules/git.nix`
 - Conditionals: `lib.optionals isPersonal personalPackages` (modules/packages.nix:61)
 - Platform checks: `pkgs.stdenv.isLinux`, `pkgs.stdenv.isDarwin` for host-specific config
-- Always set `system.stateVersion = "25.05"` (NixOS) in configuration.nix
+- Always set `system.stateVersion = "25.11"` (NixOS) in configuration.nix
 - Function parameters: `{ pkgs, lib, ... }:` pattern with ellipsis for forward compatibility
 - Enable experimental features: `nix.settings.experimental-features = [ "nix-command" "flakes" ];`
 
