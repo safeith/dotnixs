@@ -17,17 +17,6 @@ in {
       commandLineArgs =
         [ "--disable-pinch" "--password-store=gnome-libsecret" ];
     };
-    extensions = [
-      { id = "aeblfdkhhhdcdjpifhhbdiojplfjncoa"; }
-      { id = "oldceeleldhonbafppcapldpdifcinji"; }
-      { id = "bkdgflcldnnnapblkhphbgpggdiikppg"; }
-      { id = "aapbdbdomjkkjkaonfhkkikfgjllcleb"; }
-      { id = "cimiefiiaegbelhefglklhhakcgmhkai"; }
-      { id = "padekgcemlokbadohgkifijomclgjgif"; }
-      { id = "mnjggcdmjocbbbhaepdhchncahnbgone"; }
-      { id = "eimadpbcbfnmbkopoojfekhnkhdbieeh"; }
-      { id = "nngceckbapebfimnlniiiahkandclblb"; }
-    ];
   };
 
   programs.btop.enable = true;
