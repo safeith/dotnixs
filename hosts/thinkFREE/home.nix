@@ -41,7 +41,7 @@
   '';
 
   home.sessionVariables = {
-    SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/keyring/ssh";
+    SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/gcr/ssh";
     SSH_ASKPASS = "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
     GIT_ASKPASS = "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
     SSH_ASKPASS_REQUIRE = "prefer";
