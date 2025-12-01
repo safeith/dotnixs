@@ -80,8 +80,8 @@ in {
                    --subscribe "space.$sid" aerospace_workspace_change \
                    --set "space.$sid" \
                    icon="○" \
-                   icon.padding_left=0 \
-                   icon.padding_right=12 \
+                   icon.padding_left=8 \
+                   icon.padding_right=8 \
                    label.drawing=off \
                    background.drawing=off \
                    click_script="${pkgs.aerospace}/bin/aerospace workspace $sid" \
