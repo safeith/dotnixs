@@ -37,16 +37,6 @@
     4 = ['main', 'built-in']
     5 = ['main', 'built-in']
     6 = ['built-in']
-    7 = 'HIDDENL'
-    8 = 'HIDDENR'
-
-    [[on-window-detected]]
-    if.workspace = '7'
-    run = 'move-node-to-workspace 5'
-
-    [[on-window-detected]]
-    if.workspace = '8'
-    run = 'move-node-to-workspace 5'
 
     [mode.main.binding]
     alt-h = 'focus left'

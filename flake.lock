@@ -257,11 +257,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1764536451,
-        "narHash": "sha256-BgtcUkBfItu9/yU14IgUaj4rYOanTOUZjUfBP20/ZB4=",
+        "lastModified": 1764736872,
+        "narHash": "sha256-4mqLegNQeD54X7enm6EI9aNWl6CaIfyhl5PaYoGYwqk=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "3fdd076e08049a9c7a83149b270440d9787d2df5",
+        "rev": "3366918730bb6b699395a9d237397f1d710a94b3",
         "type": "github"
       },
       "original": {
@@ -281,11 +281,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1764578750,
-        "narHash": "sha256-4twV5EanZLNUuWcd/XzLVcn/gd/QRxQ093xlMum9OFQ=",
+        "lastModified": 1764622702,
+        "narHash": "sha256-HggOVvg2U3EwT44wPHEwFKromf9qR9rTqfV1i3q7rYs=",
         "owner": "nix-community",
         "repo": "lanzaboote",
-        "rev": "012a6070936168440e6208703c5500b26a9bc5a2",
+        "rev": "6242b3b2b5e5afcf329027ed4eb5fa6e2eab10f1",
         "type": "github"
       },
       "original": {
@@ -465,11 +465,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1764464945,
-        "narHash": "sha256-rofXPD/9TGpHveo1MTlUfpnF0MCG1/uHUB9f0rosdqc=",
+        "lastModified": 1764695017,
+        "narHash": "sha256-hJVPGt8MqRL0WHkNRclT4J1rJMurYsPw7dL8UwlFoaI=",
         "owner": "nix-community",
         "repo": "stylix",
-        "rev": "1fdde45cb0d30936839a630b98660e1579603951",
+        "rev": "a1e741dbce6e846129777c2a017e1354bc87b92b",
         "type": "github"
       },
       "original": {
