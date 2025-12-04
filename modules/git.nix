@@ -7,7 +7,7 @@ in
 {
   home.file.".gitignore" = lib.mkIf isWork {
     text = ''
-      */tmp
+      **/tmp
       **/*tfstate*
       **/todo.md
       **/uv.lock
