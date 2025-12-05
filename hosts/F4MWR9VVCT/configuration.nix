@@ -49,12 +49,6 @@
 
   system.defaults.spaces.spans-displays = true;
 
-  system.keyboard = {
-    enableKeyMapping = true;
-    remapCapsLockToEscape = true;
-    nonUS.remapTilde = true;
-  };
-
   homebrew = {
     enable = true;
     onActivation = {
@@ -83,6 +77,7 @@
       "sublime-text"
       "obsidian"
       "podman-desktop"
+      "karabiner-elements"
     ];
 
     masApps = { };

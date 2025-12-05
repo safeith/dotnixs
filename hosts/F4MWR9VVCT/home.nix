@@ -7,6 +7,7 @@
   imports = [
     ../../modules/aerospace.nix
     ../../modules/git.nix
+    ../../modules/karabiner.nix
     ../../modules/kitty.nix
     ../../modules/nvchad.nix
     ../../modules/packages.nix

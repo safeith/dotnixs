@@ -131,7 +131,7 @@
 
         "$mod, k, exec, kitty"
         "$mod, b, exec, brave"
-        "CTRL, space, exec, rofi -show drun"
+        "$mod, r, exec, rofi -show drun"
 
         '', Print, exec, grim -g "$(slurp)" - | swappy -f -''
         "SHIFT, Print, exec, grim - | swappy -f -"
