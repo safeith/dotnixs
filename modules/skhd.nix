@@ -6,7 +6,7 @@
   home.file.".skhdrc".text = ''
     alt - b : open -a "Brave Browser"
     alt - k : open -a "kitty"
-    ctrl + alt - p : open -a "Screenshot"
+    alt - p : open -a "Screenshot"
   '';
 
   launchd.agents.skhd = {
