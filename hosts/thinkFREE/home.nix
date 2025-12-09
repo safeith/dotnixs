@@ -5,7 +5,6 @@
   home.homeDirectory = "/home/${config.userConfig.personalUsername}";
 
   imports = [
-    ../../modules/acli.nix
     ../../modules/git.nix
     ../../modules/hyprland.nix
     ../../modules/hyprland-extras.nix

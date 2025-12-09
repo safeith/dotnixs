@@ -59,10 +59,9 @@
 
     taps = [
       "nikitabobko/tap"
-      "atlassian/homebrew-acli"
     ];
 
-    brews = [ "acli" "podman" ];
+    brews = [ "podman" ];
 
     casks = [
       "nikitabobko/tap/aerospace"
