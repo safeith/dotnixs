@@ -20,11 +20,13 @@ let
     terraform-docs
 
     # Development Tools
+    cargo
     gcc
     gh
     go
     nodejs
     python3
+    rustc
     uv
     yarn
 
