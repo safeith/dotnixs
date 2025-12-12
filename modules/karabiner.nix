@@ -13,14 +13,34 @@
         complex_modifications = {
           rules = [
             {
-              description = "Lockscreen via Option+L";
+              description = "Lockscreen via Command+Option+L";
               manipulators = [
                 {
                   type = "basic";
                   from = {
                     key_code = "l";
                     modifiers = {
-                      mandatory = [ "left_option" ];
+                      mandatory = [ "left_command" "left_option" ];
+                    };
+                  };
+                  to = [
+                    {
+                      key_code = "q";
+                      modifiers = [ "left_command" "left_control" ];
+                    }
+                  ];
+                }
+              ];
+            }
+            {
+              description = "Lockscreen via Control+Option+L";
+              manipulators = [
+                {
+                  type = "basic";
+                  from = {
+                    key_code = "l";
+                    modifiers = {
+                      mandatory = [ "left_control" "left_option" ];
                     };
                   };
                   to = [
