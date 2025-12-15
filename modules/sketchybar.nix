@@ -80,6 +80,7 @@ in {
                    --subscribe "space.$sid" aerospace_workspace_change \
                    --set "space.$sid" \
                    icon="○" \
+                   icon.font="JetBrainsMono Nerd Font:Regular:18.0" \
                    icon.padding_left=8 \
                    icon.padding_right=8 \
                    label.drawing=off \
