@@ -8,6 +8,3 @@ vim.opt.spell = true
 vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.wo.foldenable = false  -- Disable folding by default (open all folds)
-
--- Enable inlay hints by default
-vim.lsp.inlay_hint.enable(true)
