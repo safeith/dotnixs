@@ -41,3 +41,20 @@ end, { desc = "Treesitter Search" })
 map("c", "<c-s>", function()
   require("flash").toggle()
 end, { desc = "Toggle Flash Search" })
+
+-- LSP Inlay Hints toggle
+map("n", "<leader>lh", function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "Toggle Inlay Hints" })
+
+-- Copilot toggle
+map("n", "<leader>cp", function()
+  local copilot_enabled = vim.g.copilot_enabled
+  if copilot_enabled == nil or copilot_enabled == 1 then
+    vim.cmd "Copilot disable"
+    vim.notify("Copilot disabled", vim.log.levels.INFO)
+  else
+    vim.cmd "Copilot enable"
+    vim.notify("Copilot enabled", vim.log.levels.INFO)
+  end
+end, { desc = "Toggle Copilot" })

@@ -107,6 +107,11 @@ return {
       "MunifTanjim/nui.nvim",
     },
     opts = {
+      lsp = {
+        signature = {
+          enabled = false,
+        },
+      },
       cmdline = {
         view = "cmdline_popup",
         opts = {
