@@ -106,6 +106,33 @@
                 }
               ];
             }
+            {
+              description = "Left Command to Left Ctrl in kitty";
+              manipulators = [
+                {
+                  type = "basic";
+                  from = {
+                    key_code = "left_command";
+                    modifiers = {
+                      optional = [ "any" ];
+                    };
+                  };
+                  to = [
+                    {
+                      key_code = "left_control";
+                    }
+                  ];
+                  conditions = [
+                    {
+                      type = "frontmost_application_if";
+                      bundle_identifiers = [
+                        "^net\\.kovidgoyal\\.kitty$"
+                      ];
+                    }
+                  ];
+                }
+              ];
+            }
           ];
         };
         devices = [
