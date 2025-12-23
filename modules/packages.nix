@@ -10,6 +10,7 @@ let
   # Shared packages available on both Linux and macOS
   sharedPackages = with pkgs; [
     # Cloud & Infrastructure
+    ansible
     awscli2
     autossh
     cloudflared
