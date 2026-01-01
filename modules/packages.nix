@@ -51,6 +51,7 @@ let
     unzip
     wget
     whois
+    yt-dlp
     zip
     zoxide
 
