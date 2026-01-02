@@ -11,6 +11,9 @@
     extraPackages = with pkgs; [
       actionlint
       fixjson
+      gofumpt
+      goimports-reviser
+      golines
       gopls
       gotools
       lua-language-server

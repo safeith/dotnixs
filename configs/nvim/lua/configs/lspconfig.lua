@@ -18,6 +18,13 @@ vim.lsp.config.rust_analyzer = {
 vim.lsp.config.gopls = {
   settings = {
     gopls = {
+      usePlaceholders = true,
+      completeUnimported = true,
+      analyses = {
+        unusedparams = true,
+        shadow = true,
+      },
+      gofumpt = true,
       hints = {
         assignVariableTypes = false,
         compositeLiteralFields = false,

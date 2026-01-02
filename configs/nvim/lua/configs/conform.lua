@@ -2,7 +2,7 @@ local options = {
   lsp_fallback = true,
 
   formatters_by_ft = {
-    go = { "goimports", "gofmt" },
+    go = { "gofumpt", "goimports-reviser", "golines" },
     json = { "fixjson" },
     lua = { "stylua" },
     python = { "black", "mypy", "isort" },
