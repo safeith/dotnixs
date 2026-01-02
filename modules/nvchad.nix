@@ -14,8 +14,12 @@
       gofumpt
       goimports-reviser
       golines
+      gomodifytags
       gopls
+      gotests
       gotools
+      iferr
+      impl
       lua-language-server
       pyright
       rust-analyzer

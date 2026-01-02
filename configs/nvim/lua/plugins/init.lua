@@ -159,4 +159,8 @@ return {
     event = "VeryLazy",
     opts = {},
   },
+  {
+    "olexsmir/gopher.nvim",
+    ft = "go",
+  },
 }

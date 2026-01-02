@@ -31,6 +31,28 @@ let
     uv
     yarn
 
+    # Custom development tools
+    (pkgs.buildGoModule rec {
+      pname = "json2go";
+      version = "0.1.0";
+
+      src = pkgs.fetchFromGitHub {
+        owner = "olexsmir";
+        repo = "json2go";
+        rev = "v${version}";
+        hash = "sha256-4xpv2EHzviu0kwgzWqrmhRqUe/SM95/ZP6PNDL6xlt0=";
+      };
+
+      vendorHash = null;
+
+      meta = with pkgs.lib; {
+        description = "A CLI tool to convert JSON to Go structs";
+        homepage = "https://github.com/olexsmir/json2go";
+        license = licenses.mit;
+        mainProgram = "json2go";
+      };
+    })
+
     # System Utilities
     axel
     dig
