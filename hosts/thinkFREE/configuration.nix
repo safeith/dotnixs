@@ -43,6 +43,7 @@
       lm_sensors
       exfatprogs
       ntfs3g
+      wireguard-tools
     ];
   };
 
