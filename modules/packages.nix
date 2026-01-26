@@ -117,6 +117,9 @@ let
     libsForQt5.qtstyleplugin-kvantum
     kdePackages.qtstyleplugin-kvantum
 
+    # Network
+    wstunnel
+
   ];
 
   # macOS-specific packages (work environment)
