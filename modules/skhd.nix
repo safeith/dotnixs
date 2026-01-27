@@ -5,6 +5,7 @@
 
   home.file.".skhdrc".text = ''
     alt - b : open -a "Brave Browser"
+    alt - h : open -na "Brave Browser" --args --profile-directory="Personal"
     alt - k : open -a "kitty"
     alt - p : open -a "Screenshot"
   '';
