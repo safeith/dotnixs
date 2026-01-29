@@ -52,12 +52,23 @@
       nerd-fonts.jetbrains-mono
       nerd-fonts.ubuntu
       vazir-fonts
+
+      # East Asia fonts
+      noto-fonts-cjk-sans # Chinese, Japanese, Korean Sans
+      noto-fonts-cjk-serif # Chinese, Japanese, Korean Serif
+      source-han-sans # Adobe's Pan-CJK typeface
+      source-han-serif # Adobe's Pan-CJK serif typeface
+
+      # Additional coverage for specific languages
+      ipafont # Japanese
+      wqy_zenhei # Chinese
+      nanum # Korean
     ];
 
     fontconfig.defaultFonts = {
-      serif = [ "Ubuntu Nerd Font" "Vazirmatn" ];
-      sansSerif = [ "Ubuntu Nerd Font" "Vazirmatn" ];
-      monospace = [ "JetBrainsMono Nerd Font" ];
+      serif = [ "Ubuntu Nerd Font" "Vazirmatn" "Noto Serif CJK JP" "Noto Serif CJK SC" "Noto Serif CJK TC" "Noto Serif CJK KR" ];
+      sansSerif = [ "Ubuntu Nerd Font" "Vazirmatn" "Noto Sans CJK JP" "Noto Sans CJK SC" "Noto Sans CJK TC" "Noto Sans CJK KR" ];
+      monospace = [ "JetBrainsMono Nerd Font" "Noto Sans Mono CJK JP" "Noto Sans Mono CJK SC" "Noto Sans Mono CJK TC" "Noto Sans Mono CJK KR" ];
     };
   };
 }
