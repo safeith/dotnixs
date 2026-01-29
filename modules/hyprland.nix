@@ -59,7 +59,7 @@
       general = {
         gaps_in = 2;
         gaps_out = 4;
-        border_size = 2;
+        border_size = 0;
         "col.active_border" = lib.mkForce ("rgb(${config.lib.stylix.colors.base0B})");
         "col.inactive_border" = lib.mkForce ("rgb(${config.lib.stylix.colors.base08})");
         layout = "dwindle";
