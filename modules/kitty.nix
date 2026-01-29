@@ -29,6 +29,7 @@ in {
 
       # Layout
       enabled_layouts = "Tall,*";
+      window_padding_width = 4;
 
       # Transparency
       background_opacity = lib.mkForce "0.98";
