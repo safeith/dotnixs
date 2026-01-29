@@ -11,9 +11,9 @@ in {
         layer = "top";
         position = "top";
         height = 32;
-        margin-left = 4;
-        margin-right = 4;
-        margin-top = 4;
+        margin-left = 0;
+        margin-right = 0;
+        margin-top = 0;
 
         modules-left = [ "custom/nix" "hyprland/workspaces" "hyprland/window" ];
         modules-center = [ ];
@@ -147,7 +147,7 @@ in {
         background-color: #${colors.base00};
         color: #${colors.base05};
         padding: 0 8px;
-        border-radius: 10px;
+        border-radius: 0px;
       }
 
       #workspaces {
