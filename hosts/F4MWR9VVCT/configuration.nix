@@ -38,7 +38,6 @@
   };
 
   system.defaults.NSGlobalDomain = {
-    _HIHideMenuBar = true;
     "com.apple.keyboard.fnState" = false;
     AppleSpacesSwitchOnActivate = false;
     NSAutomaticCapitalizationEnabled = true;
