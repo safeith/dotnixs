@@ -12,7 +12,6 @@
     ../../modules/nvchad.nix
     ../../modules/packages.nix
     ../../modules/programs.nix
-    ../../modules/sketchybar.nix
     ../../modules/skhd.nix
     ../../modules/stylix-home.nix
     ../../modules/tmux.nix
