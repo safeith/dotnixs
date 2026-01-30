@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = [ pkgs.jankyborders ];
-
   home.file.".aerospace.toml".text = ''
     start-at-login = true
 
@@ -82,21 +80,4 @@
     enter = 'mode main'
     esc = 'mode main'
   '';
-
-  launchd.agents.jankyborders = {
-    enable = true;
-    config = {
-      ProgramArguments = [
-        "${pkgs.jankyborders}/bin/borders"
-        "active_color=0xff${config.lib.stylix.colors.base0B}"
-        "inactive_color=0xff${config.lib.stylix.colors.base08}"
-        "width=4.0"
-        "style=round"
-      ];
-      KeepAlive = true;
-      RunAtLoad = true;
-      ProcessType = "Interactive";
-    };
-  };
-
 }
