@@ -5,14 +5,13 @@
   home.homeDirectory = "/Users/${config.userConfig.workUsername}";
 
   imports = [
-    ../../modules/aerospace.nix
     ../../modules/git.nix
+    ../../modules/hammerspoon.nix
     ../../modules/karabiner.nix
     ../../modules/kitty.nix
     ../../modules/nvchad.nix
     ../../modules/packages.nix
     ../../modules/programs.nix
-    ../../modules/skhd.nix
     ../../modules/stylix-home.nix
     ../../modules/tmux.nix
     ../../modules/zsh.nix

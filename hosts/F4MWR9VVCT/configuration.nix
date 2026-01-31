@@ -39,7 +39,7 @@
 
   system.defaults.NSGlobalDomain = {
     "com.apple.keyboard.fnState" = false;
-    AppleSpacesSwitchOnActivate = false;
+    AppleSpacesSwitchOnActivate = true;  # Enable switching to space when activating app
     NSAutomaticCapitalizationEnabled = true;
     NSAutomaticPeriodSubstitutionEnabled = true;
   };
@@ -56,14 +56,11 @@
       upgrade = true;
     };
 
-    taps = [
-      "nikitabobko/tap"
-    ];
+    taps = [ ];
 
     brews = [ "podman" ];
 
     casks = [
-      "nikitabobko/tap/aerospace"
       "brave-browser"
       "1password"
       "kitty"
@@ -72,10 +69,10 @@
       "maccy"
       "spotify"
       "hiddenbar"
-      "sublime-text"
       "obsidian"
       "podman-desktop"
       "karabiner-elements"
+      "hammerspoon"
     ];
 
     masApps = { };

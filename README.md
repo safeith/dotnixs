@@ -1,6 +1,6 @@
 # Nix Flakes Configuration
 
-Multi-platform Nix configuration supporting NixOS (Hyprland) and macOS (Aerospace).
+Multi-platform Nix configuration supporting NixOS (Hyprland) and macOS (Hammerspoon).
 
 ![NixOS Desktop](screenshots/linux.png)
 ![macOS Desktop](screenshots/macOS.png)
@@ -8,7 +8,7 @@ Multi-platform Nix configuration supporting NixOS (Hyprland) and macOS (Aerospac
 ## Features
 
 - **NixOS (thinkFREE)**: Hyprland window manager with Waybar, Rofi, and Stylix theming
-- **macOS (F4MWR9VVCT)**: Aerospace window manager with Sketchybar and skhd
+- **macOS (F4MWR9VVCT)**: Hammerspoon window manager with Karabiner-Elements
 - **Shared**: NvChad, Kitty, Tmux, Zsh, Git configuration
 - **Security**: Lanzaboote secure boot on NixOS
 - **Theming**: Stylix-based unified theming
@@ -25,7 +25,8 @@ Multi-platform Nix configuration supporting NixOS (Hyprland) and macOS (Aerospac
 ├── modules/            # Reusable modules
 │   ├── git.nix         # Git configuration
 │   ├── hyprland.nix    # Hyprland WM (Linux)
-│   ├── aerospace.nix   # Aerospace WM (macOS)
+│   ├── hammerspoon.nix # Window management (macOS)
+│   ├── karabiner.nix   # Keyboard remapping (macOS)
 │   ├── kitty.nix       # Terminal emulator
 │   ├── nvchad.nix      # Neovim configuration
 │   └── ...
@@ -108,9 +109,11 @@ Replace the hostname in the build commands with your own:
 - **Features**: Auto-disable laptop display when lid closes
 
 ### macOS Example
-- **Desktop**: Aerospace + Sketchybar + skhd
+- **Desktop**: Hammerspoon window management with Vim-style keybindings
 - **Platform**: Apple Silicon (aarch64-darwin)
+- **Keyboard**: Karabiner-Elements for key remapping
 - **Apps**: Homebrew integration for macOS-specific apps
+- **Features**: Half/quarter screen snapping, app launching
 
 ## Key Modules
 
@@ -122,8 +125,8 @@ Replace the hostname in the build commands with your own:
 | `nvchad.nix` | Neovim with NvChad framework |
 | `hyprland.nix` | Hyprland WM with keybindings and animations |
 | `waybar.nix` | Status bar for Hyprland (Linux) |
-| `aerospace.nix` | Aerospace WM configuration (macOS) |
-| `sketchybar.nix` | Status bar for Aerospace (macOS) |
+| `hammerspoon.nix` | Window management and app launcher (macOS) |
+| `karabiner.nix` | Keyboard remapping (macOS) |
 | `stylix.nix` | System-wide theming |
 | `packages.nix` | Platform-specific package lists |
 | `system-optimization.nix` | Performance and system optimizations |
@@ -186,36 +189,29 @@ Replace the hostname in the build commands with your own:
 - `XF86AudioMicMute` - Toggle microphone mute
 - `XF86MonBrightnessUp/Down` - Brightness up/down (5% steps)
 
-### Aerospace (macOS)
+### Hammerspoon (macOS)
 
-**Window Management:**
-- `Alt+h/j/k/l` - Focus window left/down/up/right
-- `Alt+Shift+h/j/k/l` - Move window left/down/up/right
-- `Alt+f` - Toggle fullscreen
-- `Alt+Shift+Space` - Toggle floating/tiling
-- `Alt+Shift+b` - Balance window sizes
+**Window Management (Option + Vim Keys):**
+- `Option+h` - Snap window to left half
+- `Option+l` - Snap window to right half
+- `Option+k` - Snap window to top half
+- `Option+j` - Snap window to bottom half
+- `Option+m` - Maximize window
+- `Option+c` - Center window
 
-**Layouts:**
-- `Alt+/` - Cycle horizontal/vertical tiles layout
-- `Alt+,` - Cycle horizontal/vertical accordion layout
+**Quarter Screen (Option + Q/W/A/S):**
+- `Option+q` - Snap to top-left quarter
+- `Option+a` - Snap to bottom-left quarter
+- `Option+w` - Snap to top-right quarter
+- `Option+s` - Snap to bottom-right quarter
 
-**Workspaces:**
-- `Alt+1-5` - Switch to workspace 1-5
-- `Alt+Shift+1-5` - Move window to workspace 1-5 (auto-balances and follows)
-- Workspaces 6-7: Hidden workspaces on HIDDENL/HIDDENR monitors (windows automatically move to workspace 5)
+**Application Launchers (Option + Shift + Key):**
+- `Option+Shift+b` - Launch/Focus Brave Browser
+- `Option+Shift+t` - Launch/Focus Kitty terminal
+- `Option+Shift+p` - Launch/Focus Screenshot app
+- `Option+Shift+o` - Launch/Focus Obsidian
 
-**Resize Mode:**
-- `Alt+r` - Enter resize mode
-- `h/j/k/l` - Resize window (in resize mode)
-- `Enter/Esc` - Exit resize mode
-
-**Applications (skhd):**
-- `Alt+k` - Launch Kitty terminal
-- `Alt+b` - Launch Brave browser
-- `Ctrl+Alt+p` - Take screenshot
-
-**System:**
-- `Alt+Shift+r` - Reload Aerospace config
+**Note:** Due to Karabiner remapping, physical Command ↔ Option keys are swapped. The shortcuts above use the physical Option key.
 
 ## Customization
 
